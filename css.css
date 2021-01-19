@@ -1,0 +1,2432 @@
+/* * CleanSlate * github.com/premasagar/cleanslate * */
+/* An extreme CSS reset stylesheet, for normalising the styling of a container element and its children. by Premasagar Rose dharmafly.com license opensource.org/licenses/mit-license.php ** v0.9.3 */
+/* == BLANKET RESET RULES == */
+/* HTML 4.01 */
+.subscribe-reset, .subscribe-reset h1, .subscribe-reset h2, .subscribe-reset h3, .subscribe-reset h4, .subscribe-reset h5, .subscribe-reset h6, .subscribe-reset p, .subscribe-reset td, .subscribe-reset dl, .subscribe-reset tr, .subscribe-reset dt, .subscribe-reset ol, .subscribe-reset form, .subscribe-reset select, .subscribe-reset option, .subscribe-reset pre, .subscribe-reset div, .subscribe-reset table, .subscribe-reset th, .subscribe-reset tbody, .subscribe-reset tfoot, .subscribe-reset caption, .subscribe-reset thead, .subscribe-reset ul, .subscribe-reset li, .subscribe-reset address, .subscribe-reset blockquote, .subscribe-reset dd, .subscribe-reset fieldset, .subscribe-reset li, .subscribe-reset iframe, .subscribe-reset strong, .subscribe-reset legend, .subscribe-reset em, .subscribe-reset summary, .subscribe-reset cite, .subscribe-reset span, .subscribe-reset input, .subscribe-reset sup, .subscribe-reset label, .subscribe-reset dfn, .subscribe-reset object, .subscribe-reset big, .subscribe-reset q, .subscribe-reset samp, .subscribe-reset acronym, .subscribe-reset small, .subscribe-reset img, .subscribe-reset strike, .subscribe-reset code, .subscribe-reset sub, .subscribe-reset ins, .subscribe-reset textarea, .subscribe-reset button, .subscribe-reset var, .subscribe-reset a, .subscribe-reset abbr, .subscribe-reset applet, .subscribe-reset del, .subscribe-reset kbd, .subscribe-reset tt, .subscribe-reset b, .subscribe-reset i, .subscribe-reset hr, .subscribe-reset article, .subscribe-reset aside, .subscribe-reset figure, .subscribe-reset figcaption, .subscribe-reset footer, .subscribe-reset header, .subscribe-reset menu, .subscribe-reset nav, .subscribe-reset section, .subscribe-reset time, .subscribe-reset mark, .subscribe-reset audio, .subscribe-reset video, .subscribe-reset abbr, .subscribe-reset address, .subscribe-reset area, .subscribe-reset blockquote, .subscribe-reset canvas, .subscribe-reset caption, .subscribe-reset cite, .subscribe-reset code, .subscribe-reset colgroup, .subscribe-reset col, .subscribe-reset datalist, .subscribe-reset fieldset, .subscribe-reset main, .subscribe-reset map, .subscribe-reset meta, .subscribe-reset optgroup, .subscribe-reset output, .subscribe-reset progress {
+  background-attachment: scroll;
+  background-color: transparent;
+  background-image: none;
+ /* This rule affects the use of pngfix JavaScript http://dillerdesign.com/experiment/DD_BelatedPNG for IE6, which is used to force the browser to recognise alpha-transparent PNGs files that replace the IE6 lack of PNG transparency. (The rule overrides the VML image that is used to replace the given CSS background-image). If you don't know what that means, then you probably haven't used the pngfix script, and this comment may be ignored :) */
+  background-position: 0 0;
+  background-repeat: repeat;
+  border-color: black;
+  border-color: currentColor;
+ /* `border-color` should match font color. Modern browsers (incl. IE9) allow the use of "currentColor" to match the current font 'color' value <http://www.w3.org/TR/css3-color/#currentcolor>. For older browsers, a default of 'black' is given before this rule. Guideline to support older browsers: if you haven't already declared a border-color for an element, be sure to do so, e.g. when you first declare the border-width. */
+  border-radius: 0;
+  border-style: none;
+  border-width: medium;
+  bottom: auto;
+  clear: none;
+  clip: auto;
+  color: inherit;
+  counter-increment: none;
+  counter-reset: none;
+  cursor: auto;
+  direction: inherit;
+  display: inline;
+  float: none;
+  font-family: inherit;
+ /* As with other inherit values, this needs to be set on the root container element */
+  font-size: inherit;
+  font-style: inherit;
+  font-variant: normal;
+  font-weight: inherit;
+  height: auto;
+  left: auto;
+  letter-spacing: normal;
+  line-height: inherit;
+  list-style-type: inherit;
+ /* Could set list-style-type to none */
+  list-style-position: outside;
+  list-style-image: none;
+  margin: 0;
+  max-height: none;
+  max-width: none;
+  min-height: 0;
+  min-width: 0;
+  opacity: 1;
+  outline: invert none medium;
+  overflow: visible;
+  padding: 0;
+  position: static;
+  quotes: "" "";
+  right: auto;
+  table-layout: auto;
+  text-align: inherit;
+  text-decoration: inherit;
+  text-indent: 0;
+  text-transform: none;
+  top: auto;
+  unicode-bidi: normal;
+  vertical-align: baseline;
+  visibility: inherit;
+  white-space: normal;
+  width: auto;
+  word-spacing: normal;
+  z-index: auto;
+ /* CSS3 */
+ /* Including all prefixes according to http://caniuse.com/ */
+ /* CSS Animations don't cascade, so don't require resetting */
+  background-origin: padding-box;
+  background-clip: border-box;
+  background-size: auto;
+  -o-border-image: none;
+  border-image: none;
+  border-radius: 0;
+  box-shadow: none;
+  box-sizing: content-box;
+  column-count: auto;
+  column-gap: normal;
+  column-rule: medium none black;
+ /* doesn't exist yet but probably will */
+  column-span: 1;
+  column-width: auto;
+  -webkit-font-feature-settings: normal;
+  font-feature-settings: normal;
+  overflow-x: visible;
+  overflow-y: visible;
+  -webkit-hyphens: manual;
+  -ms-hyphens: manual;
+  hyphens: manual;
+  -ms-perspective: none;
+  -o-perspective: none;
+  perspective: none;
+  -ms-perspective-origin: 50% 50%;
+  -o-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+  text-shadow: none;
+  transition: all 0s ease 0s;
+  transform: none;
+  transform-origin: 50% 50%;
+  transform-style: flat;
+  word-break: normal;
+}
+/* == BLOCK-LEVEL == */
+/* Actually, some of these should be inline-block and other values, but block works fine */
+/* HTML 4.01 */
+.subscribe-reset, .subscribe-reset h3, .subscribe-reset h5, .subscribe-reset p, .subscribe-reset h1, .subscribe-reset dl, .subscribe-reset dt, .subscribe-reset h6, .subscribe-reset ol, .subscribe-reset form, .subscribe-reset option, .subscribe-reset pre, .subscribe-reset div, .subscribe-reset h2, .subscribe-reset caption, .subscribe-reset h4, .subscribe-reset ul, .subscribe-reset address, .subscribe-reset blockquote, .subscribe-reset dd, .subscribe-reset fieldset, .subscribe-reset hr, .subscribe-reset article, .subscribe-reset dialog, .subscribe-reset figure, .subscribe-reset footer, .subscribe-reset header, .subscribe-reset hgroup, .subscribe-reset menu, .subscribe-reset nav, .subscribe-reset section, .subscribe-reset audio, .subscribe-reset video, .subscribe-reset address, .subscribe-reset blockquote, .subscribe-reset colgroup, .subscribe-reset main, .subscribe-reset progress, .subscribe-reset summary {
+  display: block;
+}
+.subscribe-reset h1, .subscribe-reset h2, .subscribe-reset h3, .subscribe-reset h4, .subscribe-reset h5, .subscribe-reset h6 {
+  font-weight: bold;
+}
+.subscribe-reset h1 {
+  font-size: 2em;
+  padding: 0.67em 0;
+}
+.subscribe-reset h2 {
+  font-size: 1.5em;
+  padding: 0.83em 0;
+}
+.subscribe-reset h3 {
+  font-size: 1.17em;
+  padding: 0.83em 0;
+}
+.subscribe-reset h4 {
+  font-size: 1em;
+}
+.subscribe-reset h5 {
+  font-size: 0.83em;
+}
+.subscribe-reset p {
+  margin: 1em 0;
+}
+.subscribe-reset table {
+  display: table;
+}
+.subscribe-reset thead {
+  display: table-header-group;
+}
+.subscribe-reset tbody {
+  display: table-row-group;
+}
+.subscribe-reset tfoot {
+  display: table-footer-group;
+}
+.subscribe-reset tr {
+  display: table-row;
+}
+.subscribe-reset th, .subscribe-reset td {
+  display: table-cell;
+  padding: 2px;
+}
+/* == SPECIFIC ELEMENTS == */
+/* Some of these are browser defaults;
+some are just useful resets */
+.subscribe-reset ol, .subscribe-reset ul {
+  margin: 1em 0;
+}
+.subscribe-reset ul li, .subscribe-reset ul ul li, .subscribe-reset ul ul ul li, .subscribe-reset ol li, .subscribe-reset ol ol li, .subscribe-reset ol ol ol li, .subscribe-reset ul ol ol li, .subscribe-reset ul ul ol li, .subscribe-reset ol ul ul li, .subscribe-reset ol ol ul li {
+  list-style-position: inside;
+  margin-top: 0.08em;
+}
+.subscribe-reset ol ol, .subscribe-reset ol ol ol, .subscribe-reset ul ul, .subscribe-reset ul ul ul, .subscribe-reset ol ul, .subscribe-reset ol ul ul, .subscribe-reset ol ol ul, .subscribe-reset ul ol, .subscribe-reset ul ol ol, .subscribe-reset ul ul ol {
+  padding-left: 40px;
+  margin: 0;
+}
+/* helper for general navigation */
+.subscribe-reset nav ul, .subscribe-reset nav ol {
+  list-style-type: none;
+}
+.subscribe-reset ul, .subscribe-reset menu {
+  list-style-type: disc;
+}
+.subscribe-reset ol {
+  list-style-type: decimal;
+}
+.subscribe-reset ol ul, .subscribe-reset ul ul, .subscribe-reset menu ul, .subscribe-reset ol menu, .subscribe-reset ul menu, .subscribe-reset menu menu {
+  list-style-type: circle;
+}
+.subscribe-reset ol ol ul, .subscribe-reset ol ul ul, .subscribe-reset ol menu ul, .subscribe-reset ol ol menu, .subscribe-reset ol ul menu, .subscribe-reset ol menu menu, .subscribe-reset ul ol ul, .subscribe-reset ul ul ul, .subscribe-reset ul menu ul, .subscribe-reset ul ol menu, .subscribe-reset ul ul menu, .subscribe-reset ul menu menu, .subscribe-reset menu ol ul, .subscribe-reset menu ul ul, .subscribe-reset menu menu ul, .subscribe-reset menu ol menu, .subscribe-reset menu ul menu, .subscribe-reset menu menu menu {
+  list-style-type: square;
+}
+.subscribe-reset li {
+  display: list-item;
+ /* Fixes IE7 issue with positioning of nested bullets */
+  min-height: auto;
+  min-width: auto;
+  padding-left: 20px;
+ /* replace -webkit-padding-start: 40px;
+  */
+}
+.subscribe-reset strong {
+  font-weight: bold;
+}
+.subscribe-reset em {
+  font-style: italic;
+}
+.subscribe-reset kbd, .subscribe-reset samp, .subscribe-reset code, .subscribe-reset pre {
+  font-family: monospace;
+}
+.subscribe-reset a {
+  color: blue;
+  text-decoration: underline;
+}
+.subscribe-reset a:visited {
+  color: #529;
+}
+.subscribe-reset a, .subscribe-reset a *, .subscribe-reset input[type=submit], .subscribe-reset input[type=radio], .subscribe-reset input[type=checkbox], .subscribe-reset select {
+  cursor: pointer;
+}
+.subscribe-reset button, .subscribe-reset input[type=submit] {
+  text-align: center;
+  padding: 2px 6px 3px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: arial, helvetica, sans-serif;
+  font-size: small;
+  background: white;
+  -webkit-appearance: push-button;
+  color: buttontext;
+  border: 1px #a6a6a6 solid;
+  background: lightgrey;
+ /* Old browsers */
+  background: white;
+ /* Old browsers */
+ /* FF3.6+ */
+ /* Chrome,Safari4+ */
+ /* Chrome10+,Safari5.1+ */
+ /* Opera 11.10+ */
+ /* IE10+ */
+  background: linear-gradient(to bottom, white 0%, #ddd 100%, #d1d1d1 100%, #ddd 100%);
+ /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dddddd',GradientType=0);
+ /* IE6-9 */
+  -o-box-shadow: 1px 1px 0px #eee;
+  box-shadow: 1px 1px 0px #eee;
+  outline: initial;
+}
+.subscribe-reset button {
+  padding: 1px 6px 2px 6px;
+  margin-right: 5px;
+}
+.subscribe-reset input[type=hidden] {
+  display: none;
+}
+/* restore form defaults */
+.subscribe-reset textarea {
+  -webkit-appearance: textarea;
+  background: white;
+  padding: 2px;
+  margin-left: 4px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  font-size: 11px;
+  font-family: arial, helvetica, sans-serif;
+  line-height: 13px;
+  resize: both;
+}
+.subscribe-reset select, .subscribe-reset textarea, .subscribe-reset input {
+  border: 1px solid #ccc;
+}
+.subscribe-reset select {
+  font-size: 11px;
+  font-family: helvetica, arial, sans-serif;
+  display: inline-block;
+}
+.subscribe-reset textarea:focus, .subscribe-reset input:focus {
+  outline: auto 5px -webkit-focus-ring-color;
+  outline: initial;
+}
+.subscribe-reset input[type=text] {
+  background: white;
+  padding: 1px;
+  font-family: initial;
+  font-size: small;
+}
+.subscribe-reset input[type=checkbox], .subscribe-reset input[type=radio] {
+  border: 1px #2b2b2b solid;
+  border-radius: 4px;
+}
+.subscribe-reset input[type=checkbox], .subscribe-reset input[type=radio] {
+  outline: intial;
+}
+.subscribe-reset input[type=radio] {
+  margin: 2px 2px 3px 2px;
+}
+.subscribe-reset input[type=submit]:active, .subscribe-reset button:active {
+  background: #3b679e;
+ /* Old browsers */
+ /* FF3.6+ */
+ /* Chrome,Safari4+ */
+ /* Chrome10+,Safari5.1+ */
+ /* Opera 11.10+ */
+ /* IE10+ */
+  background: linear-gradient(to bottom, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%);
+ /* W3C */
+  border-color: #5259b0;
+}
+.subscribe-reset abbr[title], .subscribe-reset acronym[title], .subscribe-reset dfn[title] {
+  cursor: help;
+  border-bottom-width: 1px;
+  border-bottom-style: dotted;
+}
+.subscribe-reset ins {
+  background-color: #ff9;
+  color: black;
+}
+.subscribe-reset del {
+  text-decoration: line-through;
+}
+.subscribe-reset blockquote, .subscribe-reset q {
+  quotes: none;
+ /* HTML5 */
+}
+.subscribe-reset blockquote:before, .subscribe-reset blockquote:after, .subscribe-reset q:before, .subscribe-reset q:after, .subscribe-reset li:before, .subscribe-reset li:after {
+  content: "";
+}
+.subscribe-reset input, .subscribe-reset select {
+  vertical-align: middle;
+}
+.subscribe-reset table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.subscribe-reset hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+}
+.subscribe-reset *[dir=rtl] {
+  direction: rtl;
+}
+.subscribe-reset mark {
+  background-color: #ff9;
+  color: black;
+  font-style: italic;
+  font-weight: bold;
+}
+.subscribe-reset menu {
+  padding-left: 40px;
+  padding-top: 8px;
+}
+/* additional helpers */
+.subscribe-reset [hidden], .subscribe-reset template {
+  display: none;
+}
+.subscribe-reset abbr[title] {
+  border-bottom: 1px dotted;
+}
+.subscribe-reset sub, .subscribe-reset sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.subscribe-reset sup {
+  top: -0.5em;
+}
+.subscribe-reset sub {
+  bottom: -0.25em;
+}
+.subscribe-reset img {
+  border: 0;
+}
+.subscribe-reset figure {
+  margin: 0;
+}
+.subscribe-reset textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+/* == ROOT CONTAINER ELEMENT == */
+/* This contains default values for child elements to inherit */
+.subscribe-reset {
+  font-size: medium;
+  line-height: 1;
+  direction: ltr;
+  text-align: left;
+ /* for IE, Opera */
+  text-align: start;
+ /* recommended W3C Spec */
+  font-family: "Times New Roman", Times, serif;
+ /* Override this with whatever font-family is required */
+  color: black;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  list-style-type: disc;
+}
+.subscribe-reset pre {
+  white-space: pre;
+}
+/* http://stackoverflow.com/a/6900392 */
+#subscribe-bell-container.subscribe-reset {
+  z-index: 2147483000;
+  position: fixed;
+}
+#subscribe-bell-container.subscribe-reset.subscribe-bell-container-bottom-left {
+  bottom: 0;
+  left: 0;
+}
+#subscribe-bell-container.subscribe-reset.subscribe-bell-container-bottom-right {
+  bottom: 0;
+  right: 0;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-font-smoothing: initial;
+  position: absolute;
+  z-index: 2147483000;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  transform: scale(0.01) translateZ(0);
+  opacity: 0;
+  transition: transform 175ms ease-in-out, opacity 175ms ease-in-out;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-left.subscribe-bell-launcher-sm {
+  transform-origin: center center;
+  width: 32px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-left.subscribe-bell-launcher-sm .subscribe-bell-launcher-message {
+  left: 42px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-left.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog {
+  bottom: 39px;
+  left: 0;
+  transform-origin: left bottom;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-left.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog:before {
+  left: 5px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-left.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog:after {
+  left: 7px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-left.subscribe-bell-launcher-md {
+  transform-origin: center center;
+  width: 48px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-left.subscribe-bell-launcher-md .subscribe-bell-launcher-message {
+  left: 61px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-left.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog {
+  bottom: 58px;
+  left: 0;
+  transform-origin: left bottom;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-left.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog:before {
+  left: 12px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-left.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog:after {
+  left: 14px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-left.subscribe-bell-launcher-lg {
+  transform-origin: center center;
+  width: 64px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-left.subscribe-bell-launcher-lg .subscribe-bell-launcher-message {
+  left: 81px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-left.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog {
+  bottom: 78px;
+  left: 0;
+  transform-origin: left bottom;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-left.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog:before {
+  left: 18px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-left.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog:after {
+  left: 20px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-left .subscribe-bell-launcher-badge {
+  left: 4px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-left .subscribe-bell-launcher-message {
+  transform-origin: left center;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-left .subscribe-bell-launcher-message:after {
+  right: 100%;
+  border-right-color: black;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-left .subscribe-bell-launcher-button {
+  left: 0px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-right {
+  bottom: 20px;
+  right: 20px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-right.subscribe-bell-launcher-sm {
+  transform-origin: center center;
+  width: 32px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-right.subscribe-bell-launcher-sm .subscribe-bell-launcher-message {
+  right: 42px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-right.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog {
+  bottom: 39px;
+  right: 0;
+  transform-origin: right bottom;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-right.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog:before {
+  right: 5px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-right.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog:after {
+  right: 7px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-right.subscribe-bell-launcher-md {
+  transform-origin: center center;
+  width: 48px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-right.subscribe-bell-launcher-md .subscribe-bell-launcher-message {
+  right: 61px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-right.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog {
+  bottom: 58px;
+  right: 0;
+  transform-origin: right bottom;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-right.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog:before {
+  right: 12px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-right.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog:after {
+  right: 14px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-right.subscribe-bell-launcher-lg {
+  transform-origin: center center;
+  width: 64px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-right.subscribe-bell-launcher-lg .subscribe-bell-launcher-message {
+  right: 81px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-right.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog {
+  bottom: 78px;
+  right: 0;
+  transform-origin: right bottom;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-right.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog:before {
+  right: 18px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-right.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog:after {
+  right: 20px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-right .subscribe-bell-launcher-badge {
+  right: 4px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-right .subscribe-bell-launcher-message {
+  transform-origin: right center;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-right .subscribe-bell-launcher-message:after {
+  left: 100%;
+  border-left-color: black;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-bottom-right .subscribe-bell-launcher-button {
+  right: 0px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-button {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  transition: transform 175ms ease-in-out, border 175ms ease-in-out, width 175ms ease-in-out, height 175ms ease-in-out;
+  cursor: pointer;
+  z-index: 2147483000;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-button svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-button.subscribe-bell-launcher-button-hover {
+  cursor: pointer;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-badge {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  text-align: center;
+  top: 0;
+  cursor: pointer;
+  -webkit-filter: drop-shadow(0 2px 4px rgba(34, 36, 38, 0));
+  filter: drop-shadow(0 2px 4px rgba(34, 36, 38, 0));
+  transition: transform 175ms ease-in-out, border 175ms ease-in-out, opacity 210ms ease-in-out, width 210ms ease-in-out, height 210ms ease-in-out, position 210ms ease-in-out, right 210ms ease-in-out, top 210ms ease-in-out, bottom 210ms ease-in-out, left 210ms ease-in-out;
+  z-index: 2147483400;
+  opacity: 0;
+  transform: scale(0.01);
+  pointer-events: none;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-badge.subscribe-bell-launcher-badge-hover {
+  cursor: pointer;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-badge.subscribe-bell-launcher-badge-opened {
+  opacity: 1;
+  transform: scale(1);
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-message {
+  position: absolute;
+  color: white;
+  background: black;
+  cursor: pointer;
+  border-radius: 5px;
+  transform: translateY(-50%) scaleX(0) translateZ(0);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 175ms ease-in-out, opacity 175ms ease-in-out;
+  top: 50%;
+  z-index: 2147481000;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-message:after {
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: transparent;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-message .subscribe-bell-launcher-message-body {
+  z-index: 2147482000;
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-message.subscribe-bell-launcher-message-opened {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(-50%) scaleX(1) translateZ(0);
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-dialog {
+  cursor: pointer;
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  width: 200px;
+  transform: scale(0, 0) translateZ(0);
+  transition: transform 175ms ease-in-out, opacity 175ms ease-in-out;
+  z-index: 2147481000;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-dialog ol {
+  counter-reset: foo;
+  display: table;
+  border-spacing: 0.3em 0.75em;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-dialog ol > li {
+  counter-increment: foo;
+  display: table-row;
+  margin-bottom: 0.75em;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-dialog ol > li::before {
+  content: counter(foo) ".";
+  display: table-cell;
+ /* aha! */
+  text-align: right;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-dialog:after, #subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-dialog:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body {
+  z-index: 2147482000;
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-dialog.subscribe-bell-launcher-dialog-opened {
+  transform: scale(1, 1) translateZ(0);
+  opacity: 1;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-dialog a {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: initial;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-dialog a:visited, #subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-dialog a:hover, #subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-dialog a:hover:active, #subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-dialog a:active, #subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-dialog a:focus {
+  text-decoration: none;
+  color: initial;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-dialog button {
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  padding: 0.625em 1em;
+  box-shadow: none;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.65px;
+  cursor: pointer;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-dialog button.action {
+  color: white;
+  background: #e54b4d;
+  width: 100%;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-dialog button.action:hover {
+  background: #dd2022;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher .subscribe-bell-launcher-dialog button.action:active {
+  background: #b1191b;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm {
+  height: 32px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-button {
+  width: 32px;
+  height: 32px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-badge {
+  font-size: 8px;
+  width: 12px;
+  height: 12px;
+  line-height: 12px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-message {
+  padding: 9.6px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-message:after {
+  border-width: 6.6px;
+  margin-top: -6.6px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-message .subscribe-bell-launcher-message-body {
+  font-size: 14px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog {
+  padding: 0.3em 0.8em 0.6em 0.8em;
+  color: #333;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog:after {
+  border-top-color: white;
+  border-width: 6.6px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog:before {
+  border-top-color: rgba(180, 180, 180, 0.1);
+  border-width: 8.6px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body {
+  font-size: 14px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body h1 {
+  font-size: 15px;
+  line-height: 1.2em;
+  font-weight: 500;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #41090a;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body p {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .divider {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0.25em -0.93em;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .kickback {
+  text-align: center;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 9.8px;
+  letter-spacing: 0.5px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .instructions {
+  max-width: 95vw;
+  max-height: 70vh;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .instructions img {
+  width: 100%;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification {
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 330px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  background: rgba(250, 250, 250, 0.5);
+  overflow: auto;
+  margin: 0.5em 0;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-icon {
+  width: 50px;
+  height: 50px;
+  margin: 6px;
+  margin-right: 3px;
+  border-radius: 2px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-icon.push-notification-icon-default {
+  background: #e3e4e5;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-icon img {
+  width: 50px;
+  height: 50px;
+  border-radius: 1px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-text-container {
+  margin: 6px;
+  margin-left: 3px;
+  -ms-flex: 1;
+  flex: 1;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-text-container .push-notification-text {
+  height: 5px;
+  width: 100%;
+  background: #e3e4e5;
+  margin: 5px 0;
+  border-radius: 1px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-text-container .push-notification-text.push-notification-text-short {
+  width: 75%;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-text-container .push-notification-text.push-notification-text-medium {
+  width: 87%;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-text-container .push-notification-text:first-of-type {
+  margin-top: 2px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-sm .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-text-container .push-notification-text:last-of-type {
+  margin-bottom: 0;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md {
+  height: 48px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-button {
+  width: 48px;
+  height: 48px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-badge {
+  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-message {
+  padding: 14.4px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-message:after {
+  border-width: 9.9px;
+  margin-top: -9.9px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-message .subscribe-bell-launcher-message-body {
+  font-size: 14px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog {
+  padding: 0.3em 0.8em 0.6em 0.8em;
+  color: #333;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog:after {
+  border-top-color: white;
+  border-width: 9.9px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog:before {
+  border-top-color: rgba(180, 180, 180, 0.1);
+  border-width: 11.9px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body {
+  font-size: 14px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body h1 {
+  font-size: 15px;
+  line-height: 1.2em;
+  font-weight: 500;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #41090a;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body p {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .divider {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0.25em -0.93em;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .kickback {
+  text-align: center;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 9.8px;
+  letter-spacing: 0.5px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .instructions {
+  max-width: 95vw;
+  max-height: 70vh;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .instructions img {
+  width: 100%;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification {
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 330px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  background: rgba(250, 250, 250, 0.5);
+  overflow: auto;
+  margin: 0.5em 0;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-icon {
+  width: 50px;
+  height: 50px;
+  margin: 6px;
+  margin-right: 3px;
+  border-radius: 2px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-icon.push-notification-icon-default {
+  background: #e3e4e5;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-icon img {
+  width: 50px;
+  height: 50px;
+  border-radius: 1px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-text-container {
+  margin: 6px;
+  margin-left: 3px;
+  -ms-flex: 1;
+  flex: 1;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-text-container .push-notification-text {
+  height: 5px;
+  width: 100%;
+  background: #e3e4e5;
+  margin: 5px 0;
+  border-radius: 1px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-text-container .push-notification-text.push-notification-text-short {
+  width: 75%;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-text-container .push-notification-text.push-notification-text-medium {
+  width: 87%;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-text-container .push-notification-text:first-of-type {
+  margin-top: 2px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-md .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-text-container .push-notification-text:last-of-type {
+  margin-bottom: 0;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg {
+  height: 64px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-button {
+  width: 64px;
+  height: 64px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-badge {
+  font-size: 12px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-message {
+  padding: 19.2px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-message:after {
+  border-width: 13.2px;
+  margin-top: -13.2px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-message .subscribe-bell-launcher-message-body {
+  font-size: 14px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog {
+  padding: 0.3em 0.8em 0.6em 0.8em;
+  color: #333;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog:after {
+  border-top-color: white;
+  border-width: 13.2px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog:before {
+  border-top-color: rgba(180, 180, 180, 0.1);
+  border-width: 15.2px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body {
+  font-size: 14px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body h1 {
+  font-size: 15px;
+  line-height: 1.2em;
+  font-weight: 500;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #41090a;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body p {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .divider {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0.25em -0.93em;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .kickback {
+  text-align: center;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 9.8px;
+  letter-spacing: 0.5px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .instructions {
+  max-width: 95vw;
+  max-height: 70vh;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .instructions img {
+  width: 100%;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification {
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 330px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  background: rgba(250, 250, 250, 0.5);
+  overflow: auto;
+  margin: 0.5em 0;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-icon {
+  width: 50px;
+  height: 50px;
+  margin: 6px;
+  margin-right: 3px;
+  border-radius: 2px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-icon.push-notification-icon-default {
+  background: #e3e4e5;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-icon img {
+  width: 50px;
+  height: 50px;
+  border-radius: 1px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-text-container {
+  margin: 6px;
+  margin-left: 3px;
+  -ms-flex: 1;
+  flex: 1;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-text-container .push-notification-text {
+  height: 5px;
+  width: 100%;
+  background: #e3e4e5;
+  margin: 5px 0;
+  border-radius: 1px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-text-container .push-notification-text.push-notification-text-short {
+  width: 75%;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-text-container .push-notification-text.push-notification-text-medium {
+  width: 87%;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-text-container .push-notification-text:first-of-type {
+  margin-top: 2px;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-lg .subscribe-bell-launcher-dialog .subscribe-bell-launcher-dialog-body .push-notification .push-notification-text-container .push-notification-text:last-of-type {
+  margin-bottom: 0;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-theme-default .subscribe-bell-launcher-button svg .background {
+  fill: #e54b4d;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-theme-default .subscribe-bell-launcher-button svg .foreground {
+  fill: white;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-theme-default .subscribe-bell-launcher-button svg .stroke {
+  fill: none;
+  stroke: white;
+  stroke-width: 3px;
+  stroke-miterlimit: 10;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-theme-default .subscribe-bell-launcher-button.subscribe-bell-launcher-button-active svg .background, #subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-theme-default .subscribe-bell-launcher-button.subscribe-bell-launcher-badge-active svg .background {
+  fill: #dd2022 !important;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-theme-default .subscribe-bell-launcher-button .pulse-ring {
+  border: 7px solid rgba(255, 255, 255, 0.4);
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-theme-default .subscribe-bell-launcher-badge {
+  border: 1px solid white;
+  background: black;
+  color: white;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-theme-inverse .subscribe-bell-launcher-button svg .background {
+  fill: white;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-theme-inverse .subscribe-bell-launcher-button svg .foreground {
+  fill: #e54b4d;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-theme-inverse .subscribe-bell-launcher-button svg .stroke {
+  fill: none;
+  stroke: #e54b4d;
+  stroke-width: 3px;
+  stroke-miterlimit: 10;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-theme-inverse .subscribe-bell-launcher-button.subscribe-bell-launcher-button-active svg .background, #subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-theme-inverse .subscribe-bell-launcher-button.subscribe-bell-launcher-badge-active svg .background {
+  fill: #f2f2f2 !important;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-theme-inverse .subscribe-bell-launcher-button .pulse-ring {
+  border: 7px solid rgba(229, 75, 77, 0.4);
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher.subscribe-bell-launcher-theme-inverse .subscribe-bell-launcher-badge {
+  border: 1px solid white;
+  background: #e54b4d;
+  color: white;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher-enabled, #subscribe-bell-container.subscribe-reset .subscribe-bell-launcher-active {
+  transform: scale(1);
+  opacity: 1;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher-disabled {
+  visibility: hidden;
+}
+#subscribe-bell-container.subscribe-reset .subscribe-bell-launcher-inactive {
+  opacity: 0.5;
+}
+#subscribe-bell-container.subscribe-reset .pulse-ring {
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  animation: notifyButtonPulse 0.35s ease-in-out;
+  animation-iteration-count: 1;
+  opacity: 0;
+  z-index: 1000;
+  pointer-events: none;
+}
+@media print {
+  #subscribe-bell-container {
+    display: none;
+ }
+}
+@keyframes notifyButtonPulse {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+    border-width: 10px;
+ }
+  50% {
+    opacity: 1;
+    border-width: 5px;
+ }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+    border-width: 1px;
+ }
+}
+/* * CleanSlate * github.com/premasagar/cleanslate * */
+/* An extreme CSS reset stylesheet, for normalising the styling of a container element and its children. by Premasagar Rose dharmafly.com license opensource.org/licenses/mit-license.php ** v0.9.3 */
+/* == BLANKET RESET RULES == */
+/* HTML 4.01 */
+.subscribe-reset, .subscribe-reset h1, .subscribe-reset h2, .subscribe-reset h3, .subscribe-reset h4, .subscribe-reset h5, .subscribe-reset h6, .subscribe-reset p, .subscribe-reset td, .subscribe-reset dl, .subscribe-reset tr, .subscribe-reset dt, .subscribe-reset ol, .subscribe-reset form, .subscribe-reset select, .subscribe-reset option, .subscribe-reset pre, .subscribe-reset div, .subscribe-reset table, .subscribe-reset th, .subscribe-reset tbody, .subscribe-reset tfoot, .subscribe-reset caption, .subscribe-reset thead, .subscribe-reset ul, .subscribe-reset li, .subscribe-reset address, .subscribe-reset blockquote, .subscribe-reset dd, .subscribe-reset fieldset, .subscribe-reset li, .subscribe-reset iframe, .subscribe-reset strong, .subscribe-reset legend, .subscribe-reset em, .subscribe-reset summary, .subscribe-reset cite, .subscribe-reset span, .subscribe-reset input, .subscribe-reset sup, .subscribe-reset label, .subscribe-reset dfn, .subscribe-reset object, .subscribe-reset big, .subscribe-reset q, .subscribe-reset samp, .subscribe-reset acronym, .subscribe-reset small, .subscribe-reset img, .subscribe-reset strike, .subscribe-reset code, .subscribe-reset sub, .subscribe-reset ins, .subscribe-reset textarea, .subscribe-reset button, .subscribe-reset var, .subscribe-reset a, .subscribe-reset abbr, .subscribe-reset applet, .subscribe-reset del, .subscribe-reset kbd, .subscribe-reset tt, .subscribe-reset b, .subscribe-reset i, .subscribe-reset hr, .subscribe-reset article, .subscribe-reset aside, .subscribe-reset figure, .subscribe-reset figcaption, .subscribe-reset footer, .subscribe-reset header, .subscribe-reset menu, .subscribe-reset nav, .subscribe-reset section, .subscribe-reset time, .subscribe-reset mark, .subscribe-reset audio, .subscribe-reset video, .subscribe-reset abbr, .subscribe-reset address, .subscribe-reset area, .subscribe-reset blockquote, .subscribe-reset canvas, .subscribe-reset caption, .subscribe-reset cite, .subscribe-reset code, .subscribe-reset colgroup, .subscribe-reset col, .subscribe-reset datalist, .subscribe-reset fieldset, .subscribe-reset main, .subscribe-reset map, .subscribe-reset meta, .subscribe-reset optgroup, .subscribe-reset output, .subscribe-reset progress {
+  background-attachment: scroll;
+  background-color: transparent;
+  background-image: none;
+ /* This rule affects the use of pngfix JavaScript http://dillerdesign.com/experiment/DD_BelatedPNG for IE6, which is used to force the browser to recognise alpha-transparent PNGs files that replace the IE6 lack of PNG transparency. (The rule overrides the VML image that is used to replace the given CSS background-image). If you don't know what that means, then you probably haven't used the pngfix script, and this comment may be ignored :) */
+  background-position: 0 0;
+  background-repeat: repeat;
+  border-color: black;
+  border-color: currentColor;
+ /* `border-color` should match font color. Modern browsers (incl. IE9) allow the use of "currentColor" to match the current font 'color' value <http://www.w3.org/TR/css3-color/#currentcolor>. For older browsers, a default of 'black' is given before this rule. Guideline to support older browsers: if you haven't already declared a border-color for an element, be sure to do so, e.g. when you first declare the border-width. */
+  border-radius: 0;
+  border-style: none;
+  border-width: medium;
+  bottom: auto;
+  clear: none;
+  clip: auto;
+  color: inherit;
+  counter-increment: none;
+  counter-reset: none;
+  cursor: auto;
+  direction: inherit;
+  display: inline;
+  float: none;
+  font-family: inherit;
+ /* As with other inherit values, this needs to be set on the root container element */
+  font-size: inherit;
+  font-style: inherit;
+  font-variant: normal;
+  font-weight: inherit;
+  height: auto;
+  left: auto;
+  letter-spacing: normal;
+  line-height: inherit;
+  list-style-type: inherit;
+ /* Could set list-style-type to none */
+  list-style-position: outside;
+  list-style-image: none;
+  margin: 0;
+  max-height: none;
+  max-width: none;
+  min-height: 0;
+  min-width: 0;
+  opacity: 1;
+  outline: invert none medium;
+  overflow: visible;
+  padding: 0;
+  position: static;
+  quotes: "" "";
+  right: auto;
+  table-layout: auto;
+  text-align: inherit;
+  text-decoration: inherit;
+  text-indent: 0;
+  text-transform: none;
+  top: auto;
+  unicode-bidi: normal;
+  vertical-align: baseline;
+  visibility: inherit;
+  white-space: normal;
+  width: auto;
+  word-spacing: normal;
+  z-index: auto;
+ /* CSS3 */
+ /* Including all prefixes according to http://caniuse.com/ */
+ /* CSS Animations don't cascade, so don't require resetting */
+  background-origin: padding-box;
+  background-clip: border-box;
+  background-size: auto;
+  -o-border-image: none;
+  border-image: none;
+  border-radius: 0;
+  box-shadow: none;
+  box-sizing: content-box;
+  column-count: auto;
+  column-gap: normal;
+  column-rule: medium none black;
+ /* doesn't exist yet but probably will */
+  column-span: 1;
+  column-width: auto;
+  -webkit-font-feature-settings: normal;
+  font-feature-settings: normal;
+  overflow-x: visible;
+  overflow-y: visible;
+  -webkit-hyphens: manual;
+  -ms-hyphens: manual;
+  hyphens: manual;
+  -ms-perspective: none;
+  -o-perspective: none;
+  perspective: none;
+  -ms-perspective-origin: 50% 50%;
+  -o-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+  text-shadow: none;
+  transition: all 0s ease 0s;
+  transform: none;
+  transform-origin: 50% 50%;
+  transform-style: flat;
+  word-break: normal;
+}
+/* == BLOCK-LEVEL == */
+/* Actually, some of these should be inline-block and other values, but block works fine */
+/* HTML 4.01 */
+.subscribe-reset, .subscribe-reset h3, .subscribe-reset h5, .subscribe-reset p, .subscribe-reset h1, .subscribe-reset dl, .subscribe-reset dt, .subscribe-reset h6, .subscribe-reset ol, .subscribe-reset form, .subscribe-reset option, .subscribe-reset pre, .subscribe-reset div, .subscribe-reset h2, .subscribe-reset caption, .subscribe-reset h4, .subscribe-reset ul, .subscribe-reset address, .subscribe-reset blockquote, .subscribe-reset dd, .subscribe-reset fieldset, .subscribe-reset hr, .subscribe-reset article, .subscribe-reset dialog, .subscribe-reset figure, .subscribe-reset footer, .subscribe-reset header, .subscribe-reset hgroup, .subscribe-reset menu, .subscribe-reset nav, .subscribe-reset section, .subscribe-reset audio, .subscribe-reset video, .subscribe-reset address, .subscribe-reset blockquote, .subscribe-reset colgroup, .subscribe-reset main, .subscribe-reset progress, .subscribe-reset summary {
+  display: block;
+}
+.subscribe-reset h1, .subscribe-reset h2, .subscribe-reset h3, .subscribe-reset h4, .subscribe-reset h5, .subscribe-reset h6 {
+  font-weight: bold;
+}
+.subscribe-reset h1 {
+  font-size: 2em;
+  padding: 0.67em 0;
+}
+.subscribe-reset h2 {
+  font-size: 1.5em;
+  padding: 0.83em 0;
+}
+.subscribe-reset h3 {
+  font-size: 1.17em;
+  padding: 0.83em 0;
+}
+.subscribe-reset h4 {
+  font-size: 1em;
+}
+.subscribe-reset h5 {
+  font-size: 0.83em;
+}
+.subscribe-reset p {
+  margin: 1em 0;
+}
+.subscribe-reset table {
+  display: table;
+}
+.subscribe-reset thead {
+  display: table-header-group;
+}
+.subscribe-reset tbody {
+  display: table-row-group;
+}
+.subscribe-reset tfoot {
+  display: table-footer-group;
+}
+.subscribe-reset tr {
+  display: table-row;
+}
+.subscribe-reset th, .subscribe-reset td {
+  display: table-cell;
+  padding: 2px;
+}
+/* == SPECIFIC ELEMENTS == */
+/* Some of these are browser defaults;
+some are just useful resets */
+.subscribe-reset ol, .subscribe-reset ul {
+  margin: 1em 0;
+}
+.subscribe-reset ul li, .subscribe-reset ul ul li, .subscribe-reset ul ul ul li, .subscribe-reset ol li, .subscribe-reset ol ol li, .subscribe-reset ol ol ol li, .subscribe-reset ul ol ol li, .subscribe-reset ul ul ol li, .subscribe-reset ol ul ul li, .subscribe-reset ol ol ul li {
+  list-style-position: inside;
+  margin-top: 0.08em;
+}
+.subscribe-reset ol ol, .subscribe-reset ol ol ol, .subscribe-reset ul ul, .subscribe-reset ul ul ul, .subscribe-reset ol ul, .subscribe-reset ol ul ul, .subscribe-reset ol ol ul, .subscribe-reset ul ol, .subscribe-reset ul ol ol, .subscribe-reset ul ul ol {
+  padding-left: 40px;
+  margin: 0;
+}
+/* helper for general navigation */
+.subscribe-reset nav ul, .subscribe-reset nav ol {
+  list-style-type: none;
+}
+.subscribe-reset ul, .subscribe-reset menu {
+  list-style-type: disc;
+}
+.subscribe-reset ol {
+  list-style-type: decimal;
+}
+.subscribe-reset ol ul, .subscribe-reset ul ul, .subscribe-reset menu ul, .subscribe-reset ol menu, .subscribe-reset ul menu, .subscribe-reset menu menu {
+  list-style-type: circle;
+}
+.subscribe-reset ol ol ul, .subscribe-reset ol ul ul, .subscribe-reset ol menu ul, .subscribe-reset ol ol menu, .subscribe-reset ol ul menu, .subscribe-reset ol menu menu, .subscribe-reset ul ol ul, .subscribe-reset ul ul ul, .subscribe-reset ul menu ul, .subscribe-reset ul ol menu, .subscribe-reset ul ul menu, .subscribe-reset ul menu menu, .subscribe-reset menu ol ul, .subscribe-reset menu ul ul, .subscribe-reset menu menu ul, .subscribe-reset menu ol menu, .subscribe-reset menu ul menu, .subscribe-reset menu menu menu {
+  list-style-type: square;
+}
+.subscribe-reset li {
+  display: list-item;
+ /* Fixes IE7 issue with positioning of nested bullets */
+  min-height: auto;
+  min-width: auto;
+  padding-left: 20px;
+ /* replace -webkit-padding-start: 40px;
+  */
+}
+.subscribe-reset strong {
+  font-weight: bold;
+}
+.subscribe-reset em {
+  font-style: italic;
+}
+.subscribe-reset kbd, .subscribe-reset samp, .subscribe-reset code, .subscribe-reset pre {
+  font-family: monospace;
+}
+.subscribe-reset a {
+  color: blue;
+  text-decoration: underline;
+}
+.subscribe-reset a:visited {
+  color: #529;
+}
+.subscribe-reset a, .subscribe-reset a *, .subscribe-reset input[type=submit], .subscribe-reset input[type=radio], .subscribe-reset input[type=checkbox], .subscribe-reset select {
+  cursor: pointer;
+}
+.subscribe-reset button, .subscribe-reset input[type=submit] {
+  text-align: center;
+  padding: 2px 6px 3px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: arial, helvetica, sans-serif;
+  font-size: small;
+  background: white;
+  -webkit-appearance: push-button;
+  color: buttontext;
+  border: 1px #a6a6a6 solid;
+  background: lightgrey;
+ /* Old browsers */
+  background: white;
+ /* Old browsers */
+ /* FF3.6+ */
+ /* Chrome,Safari4+ */
+ /* Chrome10+,Safari5.1+ */
+ /* Opera 11.10+ */
+ /* IE10+ */
+  background: linear-gradient(to bottom, white 0%, #ddd 100%, #d1d1d1 100%, #ddd 100%);
+ /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dddddd',GradientType=0);
+ /* IE6-9 */
+  -o-box-shadow: 1px 1px 0px #eee;
+  box-shadow: 1px 1px 0px #eee;
+  outline: initial;
+}
+.subscribe-reset button {
+  padding: 1px 6px 2px 6px;
+  margin-right: 5px;
+}
+.subscribe-reset input[type=hidden] {
+  display: none;
+}
+/* restore form defaults */
+.subscribe-reset textarea {
+  -webkit-appearance: textarea;
+  background: white;
+  padding: 2px;
+  margin-left: 4px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  font-size: 11px;
+  font-family: arial, helvetica, sans-serif;
+  line-height: 13px;
+  resize: both;
+}
+.subscribe-reset select, .subscribe-reset textarea, .subscribe-reset input {
+  border: 1px solid #ccc;
+}
+.subscribe-reset select {
+  font-size: 11px;
+  font-family: helvetica, arial, sans-serif;
+  display: inline-block;
+}
+.subscribe-reset textarea:focus, .subscribe-reset input:focus {
+  outline: auto 5px -webkit-focus-ring-color;
+  outline: initial;
+}
+.subscribe-reset input[type=text] {
+  background: white;
+  padding: 1px;
+  font-family: initial;
+  font-size: small;
+}
+.subscribe-reset input[type=checkbox], .subscribe-reset input[type=radio] {
+  border: 1px #2b2b2b solid;
+  border-radius: 4px;
+}
+.subscribe-reset input[type=checkbox], .subscribe-reset input[type=radio] {
+  outline: intial;
+}
+.subscribe-reset input[type=radio] {
+  margin: 2px 2px 3px 2px;
+}
+.subscribe-reset input[type=submit]:active, .subscribe-reset button:active {
+  background: #3b679e;
+ /* Old browsers */
+ /* FF3.6+ */
+ /* Chrome,Safari4+ */
+ /* Chrome10+,Safari5.1+ */
+ /* Opera 11.10+ */
+ /* IE10+ */
+  background: linear-gradient(to bottom, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%);
+ /* W3C */
+  border-color: #5259b0;
+}
+.subscribe-reset abbr[title], .subscribe-reset acronym[title], .subscribe-reset dfn[title] {
+  cursor: help;
+  border-bottom-width: 1px;
+  border-bottom-style: dotted;
+}
+.subscribe-reset ins {
+  background-color: #ff9;
+  color: black;
+}
+.subscribe-reset del {
+  text-decoration: line-through;
+}
+.subscribe-reset blockquote, .subscribe-reset q {
+  quotes: none;
+ /* HTML5 */
+}
+.subscribe-reset blockquote:before, .subscribe-reset blockquote:after, .subscribe-reset q:before, .subscribe-reset q:after, .subscribe-reset li:before, .subscribe-reset li:after {
+  content: "";
+}
+.subscribe-reset input, .subscribe-reset select {
+  vertical-align: middle;
+}
+.subscribe-reset table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.subscribe-reset hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+}
+.subscribe-reset *[dir=rtl] {
+  direction: rtl;
+}
+.subscribe-reset mark {
+  background-color: #ff9;
+  color: black;
+  font-style: italic;
+  font-weight: bold;
+}
+.subscribe-reset menu {
+  padding-left: 40px;
+  padding-top: 8px;
+}
+/* additional helpers */
+.subscribe-reset [hidden], .subscribe-reset template {
+  display: none;
+}
+.subscribe-reset abbr[title] {
+  border-bottom: 1px dotted;
+}
+.subscribe-reset sub, .subscribe-reset sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.subscribe-reset sup {
+  top: -0.5em;
+}
+.subscribe-reset sub {
+  bottom: -0.25em;
+}
+.subscribe-reset img {
+  border: 0;
+}
+.subscribe-reset figure {
+  margin: 0;
+}
+.subscribe-reset textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+/* == ROOT CONTAINER ELEMENT == */
+/* This contains default values for child elements to inherit */
+.subscribe-reset {
+  font-size: medium;
+  line-height: 1;
+  direction: ltr;
+  text-align: left;
+ /* for IE, Opera */
+  text-align: start;
+ /* recommended W3C Spec */
+  font-family: "Times New Roman", Times, serif;
+ /* Override this with whatever font-family is required */
+  color: black;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  list-style-type: disc;
+}
+.subscribe-reset pre {
+  white-space: pre;
+}
+.subscribe-customlink-subscribe {
+  display: inline-block;
+  transition: all 0.1s;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+.subscribe-customlink-subscribe.subscribe-reset {
+  display: inline-block;
+  transition: all 0.1s;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+.subscribe-customlink-subscribe.state-subscribed.hide {
+  display: none;
+}
+.subscribe-customlink-subscribe.button {
+  text-transform: uppercase;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  font-weight: 600;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px grey;
+  cursor: pointer;
+}
+.subscribe-customlink-subscribe.button:hover, .subscribe-customlink-subscribe.button:focus, .subscribe-customlink-subscribe.button:active {
+  text-decoration: none;
+  box-shadow: 2px 3px 4px grey;
+}
+.subscribe-customlink-subscribe.button.state-subscribed {
+  text-transform: none;
+  font-weight: 400;
+}
+.subscribe-customlink-subscribe.link {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.subscribe-customlink-subscribe.link.state-subscribed {
+  text-transform: none;
+  font-weight: 400;
+}
+.subscribe-customlink-subscribe.link:hover, .subscribe-customlink-subscribe.link:focus, .subscribe-customlink-subscribe.link:active {
+  text-decoration: underline;
+}
+.subscribe-customlink-subscribe.button.small {
+  font-size: 13px;
+  padding: 4px 12px;
+}
+.subscribe-customlink-subscribe.link.small {
+  font-size: 13px;
+}
+.subscribe-customlink-subscribe.button.medium {
+  font-size: 15px;
+  padding: 8px 16px;
+}
+.subscribe-customlink-subscribe.link.medium {
+  font-size: 15px;
+}
+.subscribe-customlink-subscribe.button.large {
+  font-size: 18px;
+  padding: 12px 20px;
+}
+.subscribe-customlink-subscribe.link.large {
+  font-size: 18px;
+}
+.subscribe-customlink-explanation {
+  color: rgba(0, 0, 0, 0.64);
+  transition: all 0.1s;
+  font-family: "Proxima-Nova", "Proxima Nova", "Open Sans", Arial, Helvetica, sans-serif;
+  margin-bottom: 12px;
+}
+.subscribe-customlink-explanation.subscribe-reset {
+  color: rgba(0, 0, 0, 0.64);
+  transition: all 0.1s;
+  font-family: "Proxima-Nova", "Proxima Nova", "Open Sans", Arial, Helvetica, sans-serif;
+  margin-bottom: 12px;
+}
+.subscribe-customlink-explanation.state-subscribed.hide {
+  display: none;
+}
+.subscribe-customlink-explanation.small {
+  font-size: 13px;
+}
+.subscribe-customlink-explanation.medium {
+  font-size: 15px;
+}
+.subscribe-customlink-explanation.large {
+  font-size: 15px;
+}
+/* http://stackoverflow.com/a/6900392 */
+#subscribe-slidedown-container, #subscribe-popover-container {
+  font-size: 16px;
+  position: fixed;
+  z-index: 2258594000;
+  left: 0;
+  right: 0;
+  -webkit-font-smoothing: initial;
+}
+#subscribe-slidedown-container.slide-down, #subscribe-popover-container.slide-down {
+  top: 0;
+}
+#subscribe-slidedown-container.slide-down.close-slidedown #subscribe-slidedown-dialog, #subscribe-slidedown-container.slide-down.close-slidedown #subscribe-popover-dialog, #subscribe-popover-container.slide-down.close-slidedown #subscribe-slidedown-dialog, #subscribe-popover-container.slide-down.close-slidedown #subscribe-popover-dialog {
+  -webkit-animation-name: slideDownExit;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-duration: 400ms;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: slideDownExit;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 400ms;
+  animation-fill-mode: forwards;
+}
+#subscribe-slidedown-container.slide-down #subscribe-slidedown-dialog, #subscribe-slidedown-container.slide-down #subscribe-popover-dialog, #subscribe-popover-container.slide-down #subscribe-slidedown-dialog, #subscribe-popover-container.slide-down #subscribe-popover-dialog {
+  width: 500px;
+  -webkit-animation-name: slideDownEnter;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-duration: 400ms;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: slideDownEnter;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 400ms;
+  animation-fill-mode: forwards;
+}
+#subscribe-slidedown-container.slide-down #subscribe-slidedown-dialog.blocked-dialog, #subscribe-slidedown-container.slide-down #subscribe-popover-dialog.blocked-dialog, #subscribe-popover-container.slide-down #subscribe-slidedown-dialog.blocked-dialog, #subscribe-popover-container.slide-down #subscribe-popover-dialog.blocked-dialog {
+  padding: 1.714em;
+  width: 612px;
+  margin-bottom: 18px;
+}
+#subscribe-slidedown-container.slide-down #subscribe-slidedown-dialog.blocked-dialog #blocked-slidedown, #subscribe-slidedown-container.slide-down #subscribe-popover-dialog.blocked-dialog #blocked-slidedown, #subscribe-popover-container.slide-down #subscribe-slidedown-dialog.blocked-dialog #blocked-slidedown, #subscribe-popover-container.slide-down #subscribe-popover-dialog.blocked-dialog #blocked-slidedown {
+  display: block;
+}
+#subscribe-slidedown-container.slide-down #subscribe-slidedown-dialog.blocked-dialog #normal-slidedown, #subscribe-slidedown-container.slide-down #subscribe-slidedown-dialog.blocked-dialog #normal-popover, #subscribe-slidedown-container.slide-down #subscribe-popover-dialog.blocked-dialog #normal-slidedown, #subscribe-slidedown-container.slide-down #subscribe-popover-dialog.blocked-dialog #normal-popover, #subscribe-popover-container.slide-down #subscribe-slidedown-dialog.blocked-dialog #normal-slidedown, #subscribe-popover-container.slide-down #subscribe-slidedown-dialog.blocked-dialog #normal-popover, #subscribe-popover-container.slide-down #subscribe-popover-dialog.blocked-dialog #normal-slidedown, #subscribe-popover-container.slide-down #subscribe-popover-dialog.blocked-dialog #normal-popover {
+  display: none;
+}
+#subscribe-slidedown-container.slide-down #subscribe-slidedown-dialog.blocked-dialog .slidedown-body-message, #subscribe-slidedown-container.slide-down #subscribe-slidedown-dialog.blocked-dialog .popover-body-message, #subscribe-slidedown-container.slide-down #subscribe-popover-dialog.blocked-dialog .slidedown-body-message, #subscribe-slidedown-container.slide-down #subscribe-popover-dialog.blocked-dialog .popover-body-message, #subscribe-popover-container.slide-down #subscribe-slidedown-dialog.blocked-dialog .slidedown-body-message, #subscribe-popover-container.slide-down #subscribe-slidedown-dialog.blocked-dialog .popover-body-message, #subscribe-popover-container.slide-down #subscribe-popover-dialog.blocked-dialog .slidedown-body-message, #subscribe-popover-container.slide-down #subscribe-popover-dialog.blocked-dialog .popover-body-message {
+  padding: 0 0.2em 0 0.2em;
+  text-align: center;
+  width: 100%;
+}
+#subscribe-slidedown-container.slide-down #subscribe-slidedown-dialog.blocked-dialog .slidedown-body-message img, #subscribe-slidedown-container.slide-down #subscribe-slidedown-dialog.blocked-dialog .popover-body-message img, #subscribe-slidedown-container.slide-down #subscribe-popover-dialog.blocked-dialog .slidedown-body-message img, #subscribe-slidedown-container.slide-down #subscribe-popover-dialog.blocked-dialog .popover-body-message img, #subscribe-popover-container.slide-down #subscribe-slidedown-dialog.blocked-dialog .slidedown-body-message img, #subscribe-popover-container.slide-down #subscribe-slidedown-dialog.blocked-dialog .popover-body-message img, #subscribe-popover-container.slide-down #subscribe-popover-dialog.blocked-dialog .slidedown-body-message img, #subscribe-popover-container.slide-down #subscribe-popover-dialog.blocked-dialog .popover-body-message img {
+  width: 100%;
+}
+#subscribe-slidedown-container.slide-down #subscribe-slidedown-dialog.blocked-dialog .slidedown-body-message .unblock-image, #subscribe-slidedown-container.slide-down #subscribe-slidedown-dialog.blocked-dialog .popover-body-message .unblock-image, #subscribe-slidedown-container.slide-down #subscribe-popover-dialog.blocked-dialog .slidedown-body-message .unblock-image, #subscribe-slidedown-container.slide-down #subscribe-popover-dialog.blocked-dialog .popover-body-message .unblock-image, #subscribe-popover-container.slide-down #subscribe-slidedown-dialog.blocked-dialog .slidedown-body-message .unblock-image, #subscribe-popover-container.slide-down #subscribe-slidedown-dialog.blocked-dialog .popover-body-message .unblock-image, #subscribe-popover-container.slide-down #subscribe-popover-dialog.blocked-dialog .slidedown-body-message .unblock-image, #subscribe-popover-container.slide-down #subscribe-popover-dialog.blocked-dialog .popover-body-message .unblock-image {
+  margin: 2em 0 0.5em 0;
+}
+#subscribe-slidedown-container.slide-down #subscribe-slidedown-dialog.blocked-dialog .slidedown-button.secondary, #subscribe-slidedown-container.slide-down #subscribe-slidedown-dialog.blocked-dialog .popover-button.secondary, #subscribe-slidedown-container.slide-down #subscribe-popover-dialog.blocked-dialog .slidedown-button.secondary, #subscribe-slidedown-container.slide-down #subscribe-popover-dialog.blocked-dialog .popover-button.secondary, #subscribe-popover-container.slide-down #subscribe-slidedown-dialog.blocked-dialog .slidedown-button.secondary, #subscribe-popover-container.slide-down #subscribe-slidedown-dialog.blocked-dialog .popover-button.secondary, #subscribe-popover-container.slide-down #subscribe-popover-dialog.blocked-dialog .slidedown-button.secondary, #subscribe-popover-container.slide-down #subscribe-popover-dialog.blocked-dialog .popover-button.secondary {
+  padding: 0.714em 2em;
+}
+#subscribe-slidedown-container #blocked-slidedown, #subscribe-slidedown-container #blocked-popover, #subscribe-popover-container #blocked-slidedown, #subscribe-popover-container #blocked-popover {
+  display: none;
+}
+#subscribe-slidedown-container.slide-up, #subscribe-popover-container.slide-up {
+  bottom: 0;
+}
+#subscribe-slidedown-container.slide-up.close-slidedown #subscribe-slidedown-dialog, #subscribe-slidedown-container.slide-up.close-slidedown #subscribe-popover-dialog, #subscribe-slidedown-container.slide-up.close-popover #subscribe-slidedown-dialog, #subscribe-slidedown-container.slide-up.close-popover #subscribe-popover-dialog, #subscribe-popover-container.slide-up.close-slidedown #subscribe-slidedown-dialog, #subscribe-popover-container.slide-up.close-slidedown #subscribe-popover-dialog, #subscribe-popover-container.slide-up.close-popover #subscribe-slidedown-dialog, #subscribe-popover-container.slide-up.close-popover #subscribe-popover-dialog {
+  -webkit-animation-name: slideUpExit;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-duration: 400ms;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: slideUpExit;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 400ms;
+  animation-fill-mode: forwards;
+}
+#subscribe-slidedown-container.slide-up #subscribe-slidedown-dialog, #subscribe-slidedown-container.slide-up #subscribe-popover-dialog, #subscribe-popover-container.slide-up #subscribe-slidedown-dialog, #subscribe-popover-container.slide-up #subscribe-popover-dialog {
+  width: 100%;
+  -webkit-animation-name: slideUpEnter;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-duration: 400ms;
+  -webkit-animation-fill-mode: backwards;
+  animation-name: slideUpEnter;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 400ms;
+  animation-fill-mode: backwards;
+}
+#subscribe-slidedown-container .tagging-container, #subscribe-popover-container .tagging-container {
+  display: -ms-flexbox;
+  display: flex;
+  margin: 2em 0;
+}
+#subscribe-slidedown-container .tagging-container-col, #subscribe-popover-container .tagging-container-col {
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 1em;
+}
+#subscribe-slidedown-container .subscribe-category-label, #subscribe-popover-container .subscribe-category-label {
+  display: block;
+  position: relative;
+  padding-left: 2.5em;
+  margin-bottom: 1.5em;
+  color: #051b2c;
+  font-size: 1em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 1.5em;
+  width: 80%;
+  line-height: 1.5em;
+  float: left;
+ /* On mouse-over, add a grey background color */
+}
+#subscribe-slidedown-container .subscribe-category-label .subscribe-category-label-input, #subscribe-popover-container .subscribe-category-label .subscribe-category-label-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+ /* When the checkbox is checked, add a blue background */
+}
+#subscribe-slidedown-container .subscribe-category-label .subscribe-category-label-input:checked ~ .subscribe-checkmark, #subscribe-popover-container .subscribe-category-label .subscribe-category-label-input:checked ~ .subscribe-checkmark {
+  transition: ease 75ms;
+  background-color: #0078d1;
+}
+#subscribe-slidedown-container .subscribe-category-label .subscribe-category-label-input:checked ~ .subscribe-checkmark:after, #subscribe-popover-container .subscribe-category-label .subscribe-category-label-input:checked ~ .subscribe-checkmark:after {
+  display: block;
+}
+#subscribe-slidedown-container .subscribe-category-label:hover input ~ .subscribe-checkmark, #subscribe-popover-container .subscribe-category-label:hover input ~ .subscribe-checkmark {
+  background-color: #dde1e4;
+}
+#subscribe-slidedown-container .subscribe-category-label .subscribe-category-label-text, #subscribe-popover-container .subscribe-category-label .subscribe-category-label-text {
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+#subscribe-slidedown-container .subscribe-category-label .subscribe-checkmark, #subscribe-popover-container .subscribe-category-label .subscribe-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.5em;
+  width: 1.5em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  background-color: #ebedef;
+ /* Create the checkmark/indicator (hidden when not checked) */
+}
+#subscribe-slidedown-container .subscribe-category-label .subscribe-checkmark:after, #subscribe-popover-container .subscribe-category-label .subscribe-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 0.5em;
+  top: 0.25em;
+  width: 0.33em;
+  height: 0.66em;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+#subscribe-slidedown-container .subscribe-loading-container, #subscribe-popover-container .subscribe-loading-container {
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: center;
+  align-items: center;
+}
+#subscribe-slidedown-container .subscribe-loading-container .subscribe-loading-message, #subscribe-popover-container .subscribe-loading-container .subscribe-loading-message {
+  -ms-flex: 1;
+  flex: 1;
+  color: #ced3d8;
+  margin-top: 0.8125em;
+}
+#subscribe-slidedown-container .subscribe-button-indicator-holder, #subscribe-popover-container .subscribe-button-indicator-holder {
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 0.5em;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog, #subscribe-slidedown-container #subscribe-popover-dialog, #subscribe-popover-container #subscribe-slidedown-dialog, #subscribe-popover-container #subscribe-popover-dialog {
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 1px 6px rgba(5, 27, 44, 0.06), 0 2px 32px rgba(5, 27, 44, 0.16) !important;
+  background: white !important;
+  padding: 1.5em 1.5em;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Seoe UI Symbol";
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog .slidedown-body, #subscribe-slidedown-container #subscribe-slidedown-dialog .popover-body, #subscribe-slidedown-container #subscribe-popover-dialog .slidedown-body, #subscribe-slidedown-container #subscribe-popover-dialog .popover-body, #subscribe-popover-container #subscribe-slidedown-dialog .slidedown-body, #subscribe-popover-container #subscribe-slidedown-dialog .popover-body, #subscribe-popover-container #subscribe-popover-dialog .slidedown-body, #subscribe-popover-container #subscribe-popover-dialog .popover-body {
+  box-sizing: border-box;
+  margin: 0;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog .slidedown-body-icon, #subscribe-slidedown-container #subscribe-slidedown-dialog .popover-body-icon, #subscribe-slidedown-container #subscribe-popover-dialog .slidedown-body-icon, #subscribe-slidedown-container #subscribe-popover-dialog .popover-body-icon, #subscribe-popover-container #subscribe-slidedown-dialog .slidedown-body-icon, #subscribe-popover-container #subscribe-slidedown-dialog .popover-body-icon, #subscribe-popover-container #subscribe-popover-dialog .slidedown-body-icon, #subscribe-popover-container #subscribe-popover-dialog .popover-body-icon {
+  box-sizing: border-box;
+  float: left;
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog .slidedown-body-icon img, #subscribe-slidedown-container #subscribe-slidedown-dialog .popover-body-icon img, #subscribe-slidedown-container #subscribe-popover-dialog .slidedown-body-icon img, #subscribe-slidedown-container #subscribe-popover-dialog .popover-body-icon img, #subscribe-popover-container #subscribe-slidedown-dialog .slidedown-body-icon img, #subscribe-popover-container #subscribe-slidedown-dialog .popover-body-icon img, #subscribe-popover-container #subscribe-popover-dialog .slidedown-body-icon img, #subscribe-popover-container #subscribe-popover-dialog .popover-body-icon img {
+  width: 100%;
+  height: 100%;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog .slidedown-body-icon img.default-icon, #subscribe-slidedown-container #subscribe-slidedown-dialog .popover-body-icon img.default-icon, #subscribe-slidedown-container #subscribe-popover-dialog .slidedown-body-icon img.default-icon, #subscribe-slidedown-container #subscribe-popover-dialog .popover-body-icon img.default-icon, #subscribe-popover-container #subscribe-slidedown-dialog .slidedown-body-icon img.default-icon, #subscribe-popover-container #subscribe-slidedown-dialog .popover-body-icon img.default-icon, #subscribe-popover-container #subscribe-popover-dialog .slidedown-body-icon img.default-icon, #subscribe-popover-container #subscribe-popover-dialog .popover-body-icon img.default-icon {
+  width: 45px;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  height: 45px;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog .slidedown-body-message, #subscribe-slidedown-container #subscribe-slidedown-dialog .popover-body-message, #subscribe-slidedown-container #subscribe-popover-dialog .slidedown-body-message, #subscribe-slidedown-container #subscribe-popover-dialog .popover-body-message, #subscribe-popover-container #subscribe-slidedown-dialog .slidedown-body-message, #subscribe-popover-container #subscribe-slidedown-dialog .popover-body-message, #subscribe-popover-container #subscribe-popover-dialog .slidedown-body-message, #subscribe-popover-container #subscribe-popover-dialog .popover-body-message {
+  box-sizing: border-box;
+  padding: 0 0 0 1em;
+  float: left;
+  width: calc(100% - 80px);
+  line-height: 1.45em;
+  -o-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  color: #051b2c !important;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog button, #subscribe-slidedown-container #subscribe-popover-dialog button, #subscribe-popover-container #subscribe-slidedown-dialog button, #subscribe-popover-container #subscribe-popover-dialog button {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 0.375rem 1rem;
+  font-size: 0.9625em;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  font-family: inherit;
+  letter-spacing: 0.05em;
+  transition: background-color 75ms ease;
+  margin: 0;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog .slidedown-button, #subscribe-slidedown-container #subscribe-slidedown-dialog .popover-button, #subscribe-slidedown-container #subscribe-popover-dialog .slidedown-button, #subscribe-slidedown-container #subscribe-popover-dialog .popover-button, #subscribe-popover-container #subscribe-slidedown-dialog .slidedown-button, #subscribe-popover-container #subscribe-slidedown-dialog .popover-button, #subscribe-popover-container #subscribe-popover-dialog .slidedown-button, #subscribe-popover-container #subscribe-popover-dialog .popover-button {
+  padding: 0.75em 1.5em;
+  font-size: 1em;
+  border-radius: 0.25em;
+  font-weight: 400;
+  box-shadow: unset;
+  display: -ms-flexbox;
+  display: flex;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog .slidedown-button.primary, #subscribe-slidedown-container #subscribe-slidedown-dialog .popover-button.primary, #subscribe-slidedown-container #subscribe-popover-dialog .slidedown-button.primary, #subscribe-slidedown-container #subscribe-popover-dialog .popover-button.primary, #subscribe-popover-container #subscribe-slidedown-dialog .slidedown-button.primary, #subscribe-popover-container #subscribe-slidedown-dialog .popover-button.primary, #subscribe-popover-container #subscribe-popover-dialog .slidedown-button.primary, #subscribe-popover-container #subscribe-popover-dialog .popover-button.primary {
+  background: #0078d1;
+  color: white !important;
+  transition: linear 75ms;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog .slidedown-button.primary:hover, #subscribe-slidedown-container #subscribe-slidedown-dialog .popover-button.primary:hover, #subscribe-slidedown-container #subscribe-popover-dialog .slidedown-button.primary:hover, #subscribe-slidedown-container #subscribe-popover-dialog .popover-button.primary:hover, #subscribe-popover-container #subscribe-slidedown-dialog .slidedown-button.primary:hover, #subscribe-popover-container #subscribe-slidedown-dialog .popover-button.primary:hover, #subscribe-popover-container #subscribe-popover-dialog .slidedown-button.primary:hover, #subscribe-popover-container #subscribe-popover-dialog .popover-button.primary:hover {
+  background: #0062ab;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog .slidedown-button.primary:active, #subscribe-slidedown-container #subscribe-slidedown-dialog .popover-button.primary:active, #subscribe-slidedown-container #subscribe-popover-dialog .slidedown-button.primary:active, #subscribe-slidedown-container #subscribe-popover-dialog .popover-button.primary:active, #subscribe-popover-container #subscribe-slidedown-dialog .slidedown-button.primary:active, #subscribe-popover-container #subscribe-slidedown-dialog .popover-button.primary:active, #subscribe-popover-container #subscribe-popover-dialog .slidedown-button.primary:active, #subscribe-popover-container #subscribe-popover-dialog .popover-button.primary:active {
+  background: #004c85;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog .slidedown-button.primary.disabled, #subscribe-slidedown-container #subscribe-slidedown-dialog .popover-button.primary.disabled, #subscribe-slidedown-container #subscribe-popover-dialog .slidedown-button.primary.disabled, #subscribe-slidedown-container #subscribe-popover-dialog .popover-button.primary.disabled, #subscribe-popover-container #subscribe-slidedown-dialog .slidedown-button.primary.disabled, #subscribe-popover-container #subscribe-slidedown-dialog .popover-button.primary.disabled, #subscribe-popover-container #subscribe-popover-dialog .slidedown-button.primary.disabled, #subscribe-popover-container #subscribe-popover-dialog .popover-button.primary.disabled {
+  background-color: #ced3d8;
+  cursor: default;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog .slidedown-button.primary.subscribe-saving-state-button, #subscribe-slidedown-container #subscribe-slidedown-dialog .popover-button.primary.subscribe-saving-state-button, #subscribe-slidedown-container #subscribe-popover-dialog .slidedown-button.primary.subscribe-saving-state-button, #subscribe-slidedown-container #subscribe-popover-dialog .popover-button.primary.subscribe-saving-state-button, #subscribe-popover-container #subscribe-slidedown-dialog .slidedown-button.primary.subscribe-saving-state-button, #subscribe-popover-container #subscribe-slidedown-dialog .popover-button.primary.subscribe-saving-state-button, #subscribe-popover-container #subscribe-popover-dialog .slidedown-button.primary.subscribe-saving-state-button, #subscribe-popover-container #subscribe-popover-dialog .popover-button.primary.subscribe-saving-state-button {
+  padding: 0.75em 1em;
+  background: #ced3d8;
+  transition: linear 75ms;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog .slidedown-button.primary.subscribe-error-state-button, #subscribe-slidedown-container #subscribe-slidedown-dialog .popover-button.primary.subscribe-error-state-button, #subscribe-slidedown-container #subscribe-popover-dialog .slidedown-button.primary.subscribe-error-state-button, #subscribe-slidedown-container #subscribe-popover-dialog .popover-button.primary.subscribe-error-state-button, #subscribe-popover-container #subscribe-slidedown-dialog .slidedown-button.primary.subscribe-error-state-button, #subscribe-popover-container #subscribe-slidedown-dialog .popover-button.primary.subscribe-error-state-button, #subscribe-popover-container #subscribe-popover-dialog .slidedown-button.primary.subscribe-error-state-button, #subscribe-popover-container #subscribe-popover-dialog .popover-button.primary.subscribe-error-state-button {
+  padding: 0.75em 1em;
+  background: #e54a4d;
+  transition: linear 75ms;
+  -ms-flex-align: center;
+  align-items: center;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog .slidedown-button.primary.subscribe-error-state-button span, #subscribe-slidedown-container #subscribe-slidedown-dialog .popover-button.primary.subscribe-error-state-button span, #subscribe-slidedown-container #subscribe-popover-dialog .slidedown-button.primary.subscribe-error-state-button span, #subscribe-slidedown-container #subscribe-popover-dialog .popover-button.primary.subscribe-error-state-button span, #subscribe-popover-container #subscribe-slidedown-dialog .slidedown-button.primary.subscribe-error-state-button span, #subscribe-popover-container #subscribe-slidedown-dialog .popover-button.primary.subscribe-error-state-button span, #subscribe-popover-container #subscribe-popover-dialog .slidedown-button.primary.subscribe-error-state-button span, #subscribe-popover-container #subscribe-popover-dialog .popover-button.primary.subscribe-error-state-button span {
+  cursor: pointer;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog .slidedown-button.subscribe-button-indicator-holder, #subscribe-slidedown-container #subscribe-slidedown-dialog .popover-button.subscribe-button-indicator-holder, #subscribe-slidedown-container #subscribe-popover-dialog .slidedown-button.subscribe-button-indicator-holder, #subscribe-slidedown-container #subscribe-popover-dialog .popover-button.subscribe-button-indicator-holder, #subscribe-popover-container #subscribe-slidedown-dialog .slidedown-button.subscribe-button-indicator-holder, #subscribe-popover-container #subscribe-slidedown-dialog .popover-button.subscribe-button-indicator-holder, #subscribe-popover-container #subscribe-popover-dialog .slidedown-button.subscribe-button-indicator-holder, #subscribe-popover-container #subscribe-popover-dialog .popover-button.subscribe-button-indicator-holder {
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 0.5em;
+  cursor: pointer;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog .slidedown-button.secondary, #subscribe-slidedown-container #subscribe-slidedown-dialog .popover-button.secondary, #subscribe-slidedown-container #subscribe-popover-dialog .slidedown-button.secondary, #subscribe-slidedown-container #subscribe-popover-dialog .popover-button.secondary, #subscribe-popover-container #subscribe-slidedown-dialog .slidedown-button.secondary, #subscribe-popover-container #subscribe-slidedown-dialog .popover-button.secondary, #subscribe-popover-container #subscribe-popover-dialog .slidedown-button.secondary, #subscribe-popover-container #subscribe-popover-dialog .popover-button.secondary {
+  box-shadow: none;
+  background: white !important;
+ /* We sparingly use an !important tag here because it's important for the user to be able to click "No Thanks". Some sites set their own !important tag for text and we don't want that to be able to override ours. */
+  color: #0078d1 !important;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog .slidedown-button.secondary:hover, #subscribe-slidedown-container #subscribe-slidedown-dialog .popover-button.secondary:hover, #subscribe-slidedown-container #subscribe-popover-dialog .slidedown-button.secondary:hover, #subscribe-slidedown-container #subscribe-popover-dialog .popover-button.secondary:hover, #subscribe-popover-container #subscribe-slidedown-dialog .slidedown-button.secondary:hover, #subscribe-popover-container #subscribe-slidedown-dialog .popover-button.secondary:hover, #subscribe-popover-container #subscribe-popover-dialog .slidedown-button.secondary:hover, #subscribe-popover-container #subscribe-popover-dialog .popover-button.secondary:hover {
+  color: #005391;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog .slidedown-button.secondary:active, #subscribe-slidedown-container #subscribe-slidedown-dialog .popover-button.secondary:active, #subscribe-slidedown-container #subscribe-popover-dialog .slidedown-button.secondary:active, #subscribe-slidedown-container #subscribe-popover-dialog .popover-button.secondary:active, #subscribe-popover-container #subscribe-slidedown-dialog .slidedown-button.secondary:active, #subscribe-popover-container #subscribe-slidedown-dialog .popover-button.secondary:active, #subscribe-popover-container #subscribe-popover-dialog .slidedown-button.secondary:active, #subscribe-popover-container #subscribe-popover-dialog .popover-button.secondary:active {
+  color: #001f35;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog .primary.slidedown-button + .secondary.slidedown-button, #subscribe-slidedown-container #subscribe-slidedown-dialog .primary.popover-button + .secondary.popover-button, #subscribe-slidedown-container #subscribe-popover-dialog .primary.slidedown-button + .secondary.slidedown-button, #subscribe-slidedown-container #subscribe-popover-dialog .primary.popover-button + .secondary.popover-button, #subscribe-popover-container #subscribe-slidedown-dialog .primary.slidedown-button + .secondary.slidedown-button, #subscribe-popover-container #subscribe-slidedown-dialog .primary.popover-button + .secondary.popover-button, #subscribe-popover-container #subscribe-popover-dialog .primary.slidedown-button + .secondary.slidedown-button, #subscribe-popover-container #subscribe-popover-dialog .primary.popover-button + .secondary.popover-button {
+  margin-right: 0.714em;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog .slidedown-footer, #subscribe-slidedown-container #subscribe-slidedown-dialog .popover-footer, #subscribe-slidedown-container #subscribe-popover-dialog .slidedown-footer, #subscribe-slidedown-container #subscribe-popover-dialog .popover-footer, #subscribe-popover-container #subscribe-slidedown-dialog .slidedown-footer, #subscribe-popover-container #subscribe-slidedown-dialog .popover-footer, #subscribe-popover-container #subscribe-popover-dialog .slidedown-footer, #subscribe-popover-container #subscribe-popover-dialog .popover-footer {
+  position: relative;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog .align-right, #subscribe-slidedown-container #subscribe-popover-dialog .align-right, #subscribe-popover-container #subscribe-slidedown-dialog .align-right, #subscribe-popover-container #subscribe-popover-dialog .align-right {
+  float: right;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog .clearfix, #subscribe-slidedown-container #subscribe-popover-dialog .clearfix, #subscribe-popover-container #subscribe-slidedown-dialog .clearfix, #subscribe-popover-container #subscribe-popover-dialog .clearfix {
+  display: block;
+  -webkit-backface-visibility: initial !important;
+  backface-visibility: initial !important;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog .clearfix:after, #subscribe-slidedown-container #subscribe-popover-dialog .clearfix:after, #subscribe-popover-container #subscribe-slidedown-dialog .clearfix:after, #subscribe-popover-container #subscribe-popover-dialog .clearfix:after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+#subscribe-slidedown-container #subscribe-slidedown-dialog .subscribe-tag-failure-message, #subscribe-slidedown-container #subscribe-popover-dialog .subscribe-tag-failure-message, #subscribe-popover-container #subscribe-slidedown-dialog .subscribe-tag-failure-message, #subscribe-popover-container #subscribe-popover-dialog .subscribe-tag-failure-message {
+  display: -ms-flexbox;
+  display: flex;
+  float: left;
+  color: red;
+}
+@keyframes slideDownEnter {
+  0% {
+    transform: translateY(-150%);
+ }
+  100% {
+    transform: translateY(0);
+ }
+}
+@keyframes slideDownExit {
+  0% {
+    transform: translateY(0%);
+ }
+  100% {
+    transform: translateY(-150%);
+ }
+}
+@keyframes slideUpEnter {
+  0% {
+    transform: translateY(150%);
+ }
+  100% {
+    transform: translateY(0);
+ }
+}
+@keyframes slideUpExit {
+  0% {
+    transform: translateY(0%);
+ }
+  100% {
+    transform: translateY(150%);
+ }
+}
+/* * CleanSlate * github.com/premasagar/cleanslate * */
+/* An extreme CSS reset stylesheet, for normalising the styling of a container element and its children. by Premasagar Rose dharmafly.com license opensource.org/licenses/mit-license.php ** v0.9.3 */
+/* == BLANKET RESET RULES == */
+/* HTML 4.01 */
+.subscribe-reset, .subscribe-reset h1, .subscribe-reset h2, .subscribe-reset h3, .subscribe-reset h4, .subscribe-reset h5, .subscribe-reset h6, .subscribe-reset p, .subscribe-reset td, .subscribe-reset dl, .subscribe-reset tr, .subscribe-reset dt, .subscribe-reset ol, .subscribe-reset form, .subscribe-reset select, .subscribe-reset option, .subscribe-reset pre, .subscribe-reset div, .subscribe-reset table, .subscribe-reset th, .subscribe-reset tbody, .subscribe-reset tfoot, .subscribe-reset caption, .subscribe-reset thead, .subscribe-reset ul, .subscribe-reset li, .subscribe-reset address, .subscribe-reset blockquote, .subscribe-reset dd, .subscribe-reset fieldset, .subscribe-reset li, .subscribe-reset iframe, .subscribe-reset strong, .subscribe-reset legend, .subscribe-reset em, .subscribe-reset summary, .subscribe-reset cite, .subscribe-reset span, .subscribe-reset input, .subscribe-reset sup, .subscribe-reset label, .subscribe-reset dfn, .subscribe-reset object, .subscribe-reset big, .subscribe-reset q, .subscribe-reset samp, .subscribe-reset acronym, .subscribe-reset small, .subscribe-reset img, .subscribe-reset strike, .subscribe-reset code, .subscribe-reset sub, .subscribe-reset ins, .subscribe-reset textarea, .subscribe-reset button, .subscribe-reset var, .subscribe-reset a, .subscribe-reset abbr, .subscribe-reset applet, .subscribe-reset del, .subscribe-reset kbd, .subscribe-reset tt, .subscribe-reset b, .subscribe-reset i, .subscribe-reset hr, .subscribe-reset article, .subscribe-reset aside, .subscribe-reset figure, .subscribe-reset figcaption, .subscribe-reset footer, .subscribe-reset header, .subscribe-reset menu, .subscribe-reset nav, .subscribe-reset section, .subscribe-reset time, .subscribe-reset mark, .subscribe-reset audio, .subscribe-reset video, .subscribe-reset abbr, .subscribe-reset address, .subscribe-reset area, .subscribe-reset blockquote, .subscribe-reset canvas, .subscribe-reset caption, .subscribe-reset cite, .subscribe-reset code, .subscribe-reset colgroup, .subscribe-reset col, .subscribe-reset datalist, .subscribe-reset fieldset, .subscribe-reset main, .subscribe-reset map, .subscribe-reset meta, .subscribe-reset optgroup, .subscribe-reset output, .subscribe-reset progress {
+  background-attachment: scroll;
+  background-color: transparent;
+  background-image: none;
+ /* This rule affects the use of pngfix JavaScript http://dillerdesign.com/experiment/DD_BelatedPNG for IE6, which is used to force the browser to recognise alpha-transparent PNGs files that replace the IE6 lack of PNG transparency. (The rule overrides the VML image that is used to replace the given CSS background-image). If you don't know what that means, then you probably haven't used the pngfix script, and this comment may be ignored :) */
+  background-position: 0 0;
+  background-repeat: repeat;
+  border-color: black;
+  border-color: currentColor;
+ /* `border-color` should match font color. Modern browsers (incl. IE9) allow the use of "currentColor" to match the current font 'color' value <http://www.w3.org/TR/css3-color/#currentcolor>. For older browsers, a default of 'black' is given before this rule. Guideline to support older browsers: if you haven't already declared a border-color for an element, be sure to do so, e.g. when you first declare the border-width. */
+  border-radius: 0;
+  border-style: none;
+  border-width: medium;
+  bottom: auto;
+  clear: none;
+  clip: auto;
+  color: inherit;
+  counter-increment: none;
+  counter-reset: none;
+  cursor: auto;
+  direction: inherit;
+  display: inline;
+  float: none;
+  font-family: inherit;
+ /* As with other inherit values, this needs to be set on the root container element */
+  font-size: inherit;
+  font-style: inherit;
+  font-variant: normal;
+  font-weight: inherit;
+  height: auto;
+  left: auto;
+  letter-spacing: normal;
+  line-height: inherit;
+  list-style-type: inherit;
+ /* Could set list-style-type to none */
+  list-style-position: outside;
+  list-style-image: none;
+  margin: 0;
+  max-height: none;
+  max-width: none;
+  min-height: 0;
+  min-width: 0;
+  opacity: 1;
+  outline: invert none medium;
+  overflow: visible;
+  padding: 0;
+  position: static;
+  quotes: "" "";
+  right: auto;
+  table-layout: auto;
+  text-align: inherit;
+  text-decoration: inherit;
+  text-indent: 0;
+  text-transform: none;
+  top: auto;
+  unicode-bidi: normal;
+  vertical-align: baseline;
+  visibility: inherit;
+  white-space: normal;
+  width: auto;
+  word-spacing: normal;
+  z-index: auto;
+ /* CSS3 */
+ /* Including all prefixes according to http://caniuse.com/ */
+ /* CSS Animations don't cascade, so don't require resetting */
+  background-origin: padding-box;
+  background-clip: border-box;
+  background-size: auto;
+  -o-border-image: none;
+  border-image: none;
+  border-radius: 0;
+  box-shadow: none;
+  box-sizing: content-box;
+  column-count: auto;
+  column-gap: normal;
+  column-rule: medium none black;
+ /* doesn't exist yet but probably will */
+  column-span: 1;
+  column-width: auto;
+  -webkit-font-feature-settings: normal;
+  font-feature-settings: normal;
+  overflow-x: visible;
+  overflow-y: visible;
+  -webkit-hyphens: manual;
+  -ms-hyphens: manual;
+  hyphens: manual;
+  -ms-perspective: none;
+  -o-perspective: none;
+  perspective: none;
+  -ms-perspective-origin: 50% 50%;
+  -o-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+  text-shadow: none;
+  transition: all 0s ease 0s;
+  transform: none;
+  transform-origin: 50% 50%;
+  transform-style: flat;
+  word-break: normal;
+}
+/* == BLOCK-LEVEL == */
+/* Actually, some of these should be inline-block and other values, but block works fine */
+/* HTML 4.01 */
+.subscribe-reset, .subscribe-reset h3, .subscribe-reset h5, .subscribe-reset p, .subscribe-reset h1, .subscribe-reset dl, .subscribe-reset dt, .subscribe-reset h6, .subscribe-reset ol, .subscribe-reset form, .subscribe-reset option, .subscribe-reset pre, .subscribe-reset div, .subscribe-reset h2, .subscribe-reset caption, .subscribe-reset h4, .subscribe-reset ul, .subscribe-reset address, .subscribe-reset blockquote, .subscribe-reset dd, .subscribe-reset fieldset, .subscribe-reset hr, .subscribe-reset article, .subscribe-reset dialog, .subscribe-reset figure, .subscribe-reset footer, .subscribe-reset header, .subscribe-reset hgroup, .subscribe-reset menu, .subscribe-reset nav, .subscribe-reset section, .subscribe-reset audio, .subscribe-reset video, .subscribe-reset address, .subscribe-reset blockquote, .subscribe-reset colgroup, .subscribe-reset main, .subscribe-reset progress, .subscribe-reset summary {
+  display: block;
+}
+.subscribe-reset h1, .subscribe-reset h2, .subscribe-reset h3, .subscribe-reset h4, .subscribe-reset h5, .subscribe-reset h6 {
+  font-weight: bold;
+}
+.subscribe-reset h1 {
+  font-size: 2em;
+  padding: 0.67em 0;
+}
+.subscribe-reset h2 {
+  font-size: 1.5em;
+  padding: 0.83em 0;
+}
+.subscribe-reset h3 {
+  font-size: 1.17em;
+  padding: 0.83em 0;
+}
+.subscribe-reset h4 {
+  font-size: 1em;
+}
+.subscribe-reset h5 {
+  font-size: 0.83em;
+}
+.subscribe-reset p {
+  margin: 1em 0;
+}
+.subscribe-reset table {
+  display: table;
+}
+.subscribe-reset thead {
+  display: table-header-group;
+}
+.subscribe-reset tbody {
+  display: table-row-group;
+}
+.subscribe-reset tfoot {
+  display: table-footer-group;
+}
+.subscribe-reset tr {
+  display: table-row;
+}
+.subscribe-reset th, .subscribe-reset td {
+  display: table-cell;
+  padding: 2px;
+}
+/* == SPECIFIC ELEMENTS == */
+/* Some of these are browser defaults;
+some are just useful resets */
+.subscribe-reset ol, .subscribe-reset ul {
+  margin: 1em 0;
+}
+.subscribe-reset ul li, .subscribe-reset ul ul li, .subscribe-reset ul ul ul li, .subscribe-reset ol li, .subscribe-reset ol ol li, .subscribe-reset ol ol ol li, .subscribe-reset ul ol ol li, .subscribe-reset ul ul ol li, .subscribe-reset ol ul ul li, .subscribe-reset ol ol ul li {
+  list-style-position: inside;
+  margin-top: 0.08em;
+}
+.subscribe-reset ol ol, .subscribe-reset ol ol ol, .subscribe-reset ul ul, .subscribe-reset ul ul ul, .subscribe-reset ol ul, .subscribe-reset ol ul ul, .subscribe-reset ol ol ul, .subscribe-reset ul ol, .subscribe-reset ul ol ol, .subscribe-reset ul ul ol {
+  padding-left: 40px;
+  margin: 0;
+}
+/* helper for general navigation */
+.subscribe-reset nav ul, .subscribe-reset nav ol {
+  list-style-type: none;
+}
+.subscribe-reset ul, .subscribe-reset menu {
+  list-style-type: disc;
+}
+.subscribe-reset ol {
+  list-style-type: decimal;
+}
+.subscribe-reset ol ul, .subscribe-reset ul ul, .subscribe-reset menu ul, .subscribe-reset ol menu, .subscribe-reset ul menu, .subscribe-reset menu menu {
+  list-style-type: circle;
+}
+.subscribe-reset ol ol ul, .subscribe-reset ol ul ul, .subscribe-reset ol menu ul, .subscribe-reset ol ol menu, .subscribe-reset ol ul menu, .subscribe-reset ol menu menu, .subscribe-reset ul ol ul, .subscribe-reset ul ul ul, .subscribe-reset ul menu ul, .subscribe-reset ul ol menu, .subscribe-reset ul ul menu, .subscribe-reset ul menu menu, .subscribe-reset menu ol ul, .subscribe-reset menu ul ul, .subscribe-reset menu menu ul, .subscribe-reset menu ol menu, .subscribe-reset menu ul menu, .subscribe-reset menu menu menu {
+  list-style-type: square;
+}
+.subscribe-reset li {
+  display: list-item;
+ /* Fixes IE7 issue with positioning of nested bullets */
+  min-height: auto;
+  min-width: auto;
+  padding-left: 20px;
+ /* replace -webkit-padding-start: 40px;
+  */
+}
+.subscribe-reset strong {
+  font-weight: bold;
+}
+.subscribe-reset em {
+  font-style: italic;
+}
+.subscribe-reset kbd, .subscribe-reset samp, .subscribe-reset code, .subscribe-reset pre {
+  font-family: monospace;
+}
+.subscribe-reset a {
+  color: blue;
+  text-decoration: underline;
+}
+.subscribe-reset a:visited {
+  color: #529;
+}
+.subscribe-reset a, .subscribe-reset a *, .subscribe-reset input[type=submit], .subscribe-reset input[type=radio], .subscribe-reset input[type=checkbox], .subscribe-reset select {
+  cursor: pointer;
+}
+.subscribe-reset button, .subscribe-reset input[type=submit] {
+  text-align: center;
+  padding: 2px 6px 3px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: arial, helvetica, sans-serif;
+  font-size: small;
+  background: white;
+  -webkit-appearance: push-button;
+  color: buttontext;
+  border: 1px #a6a6a6 solid;
+  background: lightgrey;
+ /* Old browsers */
+  background: white;
+ /* Old browsers */
+ /* FF3.6+ */
+ /* Chrome,Safari4+ */
+ /* Chrome10+,Safari5.1+ */
+ /* Opera 11.10+ */
+ /* IE10+ */
+  background: linear-gradient(to bottom, white 0%, #ddd 100%, #d1d1d1 100%, #ddd 100%);
+ /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dddddd',GradientType=0);
+ /* IE6-9 */
+  -o-box-shadow: 1px 1px 0px #eee;
+  box-shadow: 1px 1px 0px #eee;
+  outline: initial;
+}
+.subscribe-reset button {
+  padding: 1px 6px 2px 6px;
+  margin-right: 5px;
+}
+.subscribe-reset input[type=hidden] {
+  display: none;
+}
+/* restore form defaults */
+.subscribe-reset textarea {
+  -webkit-appearance: textarea;
+  background: white;
+  padding: 2px;
+  margin-left: 4px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  font-size: 11px;
+  font-family: arial, helvetica, sans-serif;
+  line-height: 13px;
+  resize: both;
+}
+.subscribe-reset select, .subscribe-reset textarea, .subscribe-reset input {
+  border: 1px solid #ccc;
+}
+.subscribe-reset select {
+  font-size: 11px;
+  font-family: helvetica, arial, sans-serif;
+  display: inline-block;
+}
+.subscribe-reset textarea:focus, .subscribe-reset input:focus {
+  outline: auto 5px -webkit-focus-ring-color;
+  outline: initial;
+}
+.subscribe-reset input[type=text] {
+  background: white;
+  padding: 1px;
+  font-family: initial;
+  font-size: small;
+}
+.subscribe-reset input[type=checkbox], .subscribe-reset input[type=radio] {
+  border: 1px #2b2b2b solid;
+  border-radius: 4px;
+}
+.subscribe-reset input[type=checkbox], .subscribe-reset input[type=radio] {
+  outline: intial;
+}
+.subscribe-reset input[type=radio] {
+  margin: 2px 2px 3px 2px;
+}
+.subscribe-reset input[type=submit]:active, .subscribe-reset button:active {
+  background: #3b679e;
+ /* Old browsers */
+ /* FF3.6+ */
+ /* Chrome,Safari4+ */
+ /* Chrome10+,Safari5.1+ */
+ /* Opera 11.10+ */
+ /* IE10+ */
+  background: linear-gradient(to bottom, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%);
+ /* W3C */
+  border-color: #5259b0;
+}
+.subscribe-reset abbr[title], .subscribe-reset acronym[title], .subscribe-reset dfn[title] {
+  cursor: help;
+  border-bottom-width: 1px;
+  border-bottom-style: dotted;
+}
+.subscribe-reset ins {
+  background-color: #ff9;
+  color: black;
+}
+.subscribe-reset del {
+  text-decoration: line-through;
+}
+.subscribe-reset blockquote, .subscribe-reset q {
+  quotes: none;
+ /* HTML5 */
+}
+.subscribe-reset blockquote:before, .subscribe-reset blockquote:after, .subscribe-reset q:before, .subscribe-reset q:after, .subscribe-reset li:before, .subscribe-reset li:after {
+  content: "";
+}
+.subscribe-reset input, .subscribe-reset select {
+  vertical-align: middle;
+}
+.subscribe-reset table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.subscribe-reset hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+}
+.subscribe-reset *[dir=rtl] {
+  direction: rtl;
+}
+.subscribe-reset mark {
+  background-color: #ff9;
+  color: black;
+  font-style: italic;
+  font-weight: bold;
+}
+.subscribe-reset menu {
+  padding-left: 40px;
+  padding-top: 8px;
+}
+/* additional helpers */
+.subscribe-reset [hidden], .subscribe-reset template {
+  display: none;
+}
+.subscribe-reset abbr[title] {
+  border-bottom: 1px dotted;
+}
+.subscribe-reset sub, .subscribe-reset sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.subscribe-reset sup {
+  top: -0.5em;
+}
+.subscribe-reset sub {
+  bottom: -0.25em;
+}
+.subscribe-reset img {
+  border: 0;
+}
+.subscribe-reset figure {
+  margin: 0;
+}
+.subscribe-reset textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+/* == ROOT CONTAINER ELEMENT == */
+/* This contains default values for child elements to inherit */
+.subscribe-reset {
+  font-size: medium;
+  line-height: 1;
+  direction: ltr;
+  text-align: left;
+ /* for IE, Opera */
+  text-align: start;
+ /* recommended W3C Spec */
+  font-family: "Times New Roman", Times, serif;
+ /* Override this with whatever font-family is required */
+  color: black;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  list-style-type: disc;
+}
+.subscribe-reset pre {
+  white-space: pre;
+}
