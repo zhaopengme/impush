@@ -108,37 +108,6 @@ if (isBlank(utm_source)) {
   setCookie("utm_source", utm_source, 999)
 }
 
-
-
-var Layer = {
-  create: function () {
-    var html = '<div class="layer-shade"></div> <div class="layui-layer layui-layer-dialog"> <div class="layui-layer-content"> <div> <div class="layui-layer-close"> <img src="./close.png" alt=""> </div> <img id="subscribe-button" class="layui-layer-image" src="./Lark20210121-202949.png" alt=""> </div> </div> </div><style> .layer-shade{ top: 0; left: 0; width: 100%; height: 100%; position: fixed; z-index: 2258594000; background-color: rgb(0, 0, 0); opacity: 0.3; } .layui-layer{ top: 0; left: 0; width: 100%; height: 100%; position: fixed; z-index: 2258594001; } .layui-layer-content{ display: flex; height: 100%; justify-content: center; align-items: center; padding: 0.5em; } .layui-layer-image{ width:100%; height: auto; } .layui-layer-close{ float:right; } </style>';
-    var div = document.createElement("div");
-    div.id = "layer-id";
-    div.innerHTML = html;
-    document.body.appendChild(div);
-  },
-  open: function (callback) {
-    Layer.create();
-    setTimeout(function () {
-      Layer.listener(callback)
-    },50)
-  },
-  listener: function (callback) {
-    document.querySelector('.layui-layer-close').onclick = function () {
-      document.querySelector('#layer-id').remove();
-    }
-    document.querySelector('.layui-layer-content').onclick = function () {
-      if (callback) {
-        callback();
-      }
-      document.querySelector('#layer-id').remove();
-    }
-  }
-}
-
-
-
 var hashKey =
   "BDhUAzckW8uraLvGsXCSxqpG086DCBjp3TMZ8tSVUK1ywTnFL8GjHYq0SxjyyoZAeEFtPk2wyBmDp2NwyvhNpBI"
 
@@ -148,10 +117,10 @@ var Push = {
   },
   ga: function (event, eventParams) {
     if (!eventParams) {
-      eventParams={}
+      eventParams = {}
     }
     if (window.gtag) {
-        gtag('event', event, eventParams);
+      gtag("event", event, eventParams)
     }
   },
   install: function (params) {
@@ -161,7 +130,7 @@ var Push = {
         Push.push_updateSubscription(params)
       },
       () => {
-        Push.ga('denied')
+        Push.ga("denied")
         params.denied()
       }
     )
@@ -201,6 +170,7 @@ var Push = {
     return token
   },
   urlBase64ToUint8Array: function (e) {
+    alert('urlBase64ToUint8Array');
     const n = (e + "=".repeat((4 - (e.length % 4)) % 4))
         .replace(/\-/g, "+")
         .replace(/_/g, "/"),
@@ -210,32 +180,42 @@ var Push = {
     return r
   },
   push_subscribe: function (params) {
+    alert('push_subscribe');
+
     Notification.requestPermission().then((permission) => {
+      alert('push_subscribe'+permission);
+
       if (permission == "granted") {
         Push.install(params)
         localStorage.setItem("MegaPid", params.pid)
         navigator.serviceWorker.ready.then((registration) => {
+          alert('serviceWorker');
+
           registration.pushManager
             .subscribe({
               userVisibleOnly: true,
               applicationServerKey: Push.urlBase64ToUint8Array(hashKey),
             })
             .then((pushSubscription) => {
+              alert('pushSubscription');
+
               Push.push_sendSubscriptionToServer(
                 pushSubscription,
                 "POST",
                 params,
                 "new"
-              );
-              Push.ga('subscribed_ok')
+              )
+              Push.ga("subscribed_ok")
             })
             .catch((err) => {
-              Push.ga('subscribe_error')
+              alert('subscribe_error');
+              alert(err);
+              Push.ga("subscribe_error")
               console.warn(err)
             })
         })
       } else {
-        Push.ga('denied')
+        Push.ga("denied")
         params.denied()
       }
     })
@@ -246,65 +226,276 @@ var Push = {
         return registration.pushManager.getSubscription()
       })
       .then((pushSubscription) => {
-        Push.push_sendSubscriptionToServer(pushSubscription, "POST", params, "update")
-        Push.ga('subscribed_update')
+        Push.push_sendSubscriptionToServer(
+          pushSubscription,
+          "POST",
+          params,
+          "update"
+        )
+        Push.ga("subscribed_update")
       })
       .catch((err) => {
-        Push.ga('subscribe_update_error')
+        Push.ga("subscribe_update_error")
         console.warn(err)
       })
   },
-  push_sendSubscriptionToServer: function (pushSubscription, method, params, subscribeType) {
-    var p256dh = pushSubscription.getKey("p256dh");
+  push_sendSubscriptionToServer: function (
+    pushSubscription,
+    method,
+    params,
+    subscribeType
+  ) {
+    var p256dh = pushSubscription.getKey("p256dh")
     if (p256dh) {
       p256dh = btoa(String.fromCharCode.apply(null, new Uint8Array(p256dh)))
     }
-    var auth = pushSubscription.getKey("auth");
+    var auth = pushSubscription.getKey("auth")
     if (auth) {
-      auth=btoa(String.fromCharCode.apply(null, new Uint8Array(auth)))
+      auth = btoa(String.fromCharCode.apply(null, new Uint8Array(auth)))
     }
+    alert('push_sendSubscriptionToServer');
+
     fetch("https://api.newpush.today/code/subscribe/", {
       method: method,
       credentials: "include",
       body: JSON.stringify({
         utm_source: utm_source,
-        pid:params.pid,
-        subscribeType:subscribeType,
+        pid: params.pid,
+        subscribeType: subscribeType,
         uid: Push.generateToken() + "",
         endpoint: pushSubscription.endpoint,
         expirationTime: null,
         subscribedDomain: window.location.host,
         keys: {
           p256dh: p256dh,
-          auth: auth
-        }
-      })
+          auth: auth,
+        },
+      }),
+    }).then(() => {
+      alert('ok');
+
+      params.subscribed()
     })
-      .then(() => {
-        params.subscribed();
-      })
   },
 }
 
+var storage = (function (win) {
+  var StorageKeys = {},
+    regStorageKey = /^localstorage\_\_\_(.*)+\_\_\_\d*$/,
+    prefixText = "localstorage",
+    space = "___"
 
+  function getRealKey(key) {
+    var tempArr = key.split(space),
+      realKey = {}
 
-Layer.open(function () {
-    Push.init({
-      pid: 2,
-      type: "",
-      button: "subscribe-button",
-      granted: function () {
-        removeDialog();
-        localStorage.setItem("subscribe-push", "true")
-      },
-      denied: function () {
-        removeDialog()
-        localStorage.setItem("subscribe-push", "false")
-      },
-      subscribed: function () {
-        removeDialog()
-        localStorage.setItem("subscribe-push", "true")
-      },
-    })
-})
+    realKey["realkey"] = tempArr[1]
+    realKey["expires"] = tempArr[2] || ""
+
+    return realKey
+  }
+
+  function isExpires(key, expires) {
+    var now = +new Date()
+
+    if (!expires) {
+      return false
+    }
+
+    if (now > parseInt(expires, 10)) {
+      return true
+    }
+
+    return false
+  }
+
+  function clear() {
+    for (var key in win.localStorage) {
+      if (regStorageKey.test(key)) {
+        win.localStorage.removeItem(key)
+      }
+    }
+    return this
+  }
+
+  function removeItem(key) {
+    var item = StorageKeys[key]
+    if (item) {
+      win.localStorage.removeItem(item["key"])
+    }
+    return this
+  }
+
+  function getItem(key) {
+    var item = StorageKeys[key]
+    if (item) {
+      // 如果过期了，那么就返回空字符串
+      if (isExpires(key, item["expires"])) {
+        return ""
+      }
+      return win.localStorage[item["key"]]
+    }
+    return ""
+  }
+
+  function setItem(key, value, expires) {
+    if (!key) {
+      return this
+    }
+
+    expires = expires || 0
+
+    this._key = key
+    var now = +new Date(),
+      localKey =
+        prefixText + space + key + space + (expires ? expires * 1000 + now : "")
+
+    win.localStorage.setItem(localKey, value)
+    StorageKeys[key] = {
+      key: localKey,
+      expires: expires ? expires * 1000 + now : "",
+    }
+
+    return this
+  }
+
+  function expires(seconds) {
+    if (!seconds) {
+      return this
+    }
+
+    var key = this._key,
+      item = StorageKeys[key] || {},
+      value = win.localStorage[item["key"]],
+      now = +new Date()
+
+    if (!key) {
+      return this
+    }
+
+    this.removeItem(key)
+    this.setItem(key, value, seconds)
+
+    return this
+  }
+
+  function initCheck() {
+    var realKey
+    for (var key in win.localStorage) {
+      if (regStorageKey.test(key)) {
+        realKey = getRealKey(key)
+
+        // 如果已经过期的local data，则删掉
+        if (isExpires(realKey["realkey"], realKey["expires"])) {
+          win.localStorage.removeItem(key)
+          continue
+        }
+
+        StorageKeys[realKey["realkey"]] = {
+          key: key,
+          expires: realKey["expires"],
+        }
+      }
+    }
+  }
+
+  // 立即检查localStorage过期情况
+  initCheck()
+
+  return {
+    getItem: getItem,
+    setItem: setItem,
+    removeItem: removeItem,
+    clear: clear,
+    expires: expires,
+  }
+})(window)
+
+var Layer = {
+  create: function (options) {
+    var html =
+      '<div class="layer-shade"></div> <div class="layui-layer layui-layer-dialog"> <div class="layui-layer-content"> <div> <div class="layui-layer-close"> <img src="./close.png" alt=""> </div> <div id="subscribe-button">' +
+      options.content +
+      "</div> </div> </div> </div><style> .layer-shade{ top: 0; left: 0; width: 100%; height: 100%; position: fixed; z-index: 2258594000; background-color: rgb(0, 0, 0); opacity: 0.3; } .layui-layer{ top: 0; left: 0; width: 100%; height: 100%; position: fixed; z-index: 2258594001; } .layui-layer-content{ display: flex; height: 100%; justify-content: center; align-items: center; padding: 0.5em; } .layui-layer-close{ float:right; } </style>"
+    var div = document.createElement("div")
+    div.id = "layer-id"
+    div.innerHTML = html
+    document.body.appendChild(div)
+  },
+  listener: function (options) {
+    setTimeout(function () {
+      document.querySelector(".layui-layer-close").onclick = function (e) {
+        e.stopPropagation()
+        if (document.querySelector("#layer-id")) {
+          document.querySelector("#layer-id").remove()
+        }
+        if (options.close) {
+          options.close()
+        }
+      }
+      document.querySelector(".layui-layer-content").onclick = function (e) {
+        e.stopPropagation()
+        if (document.querySelector("#layer-id")) {
+          document.querySelector("#layer-id").remove()
+        }
+        if (options.ok) {
+          options.ok()
+        }
+      }
+    }, 50)
+  },
+  open: function (options) {
+    Layer.create(options)
+    Layer.listener(options)
+  },
+}
+
+function _init() {
+  var contents = [
+    '<img src="./2.png" alt="" style="width:100%;height:auto;">',
+    '<img src="./1.png" alt="" style="width:100%;height:auto;">',
+  ]
+  var options = {
+    content: contents[Math.floor(Math.random() * contents.length)],
+    ok: function () {
+      Push.init({
+        pid: 2,
+        type: "",
+        button: "subscribe-button",
+        granted: function () {
+          localStorage.setItem("subscribe-push", "true")
+        },
+        denied: function () {
+          storage.setItem("deniedsubscribed", "true")
+        },
+        subscribed: function () {
+          localStorage.setItem("subscribed", "true")
+        },
+      })
+    },
+    close: function () {
+      storage.setItem("nosubscribed", "true").expires(10)
+    },
+  }
+
+  var subscribed = storage.getItem("subscribed")
+
+  if (subscribed == "true") {
+    return
+  }
+
+  var nosubscribed = storage.getItem("nosubscribed")
+
+  if (nosubscribed) {
+    return
+  }
+  var deniedsubscribed = storage.getItem("deniedsubscribed")
+
+  if (deniedsubscribed) {
+    return
+  }
+
+  Layer.open(options)
+}
+_init()
 
