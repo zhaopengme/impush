@@ -1,3 +1,9 @@
+var contents = [
+  '<img src="./2.png" alt="" style="width:100%;height:auto;">',
+  '<img src="./1.png" alt="" style="width:100%;height:auto;">',
+]
+var idx = Math.floor(Math.random() * contents.length);
+
 var idbKeyval = (function (e) {
   "use strict"
   class t {
@@ -120,7 +126,7 @@ var Push = {
       eventParams = {}
     }
     if (window.gtag) {
-      gtag("event", event, eventParams)
+      gtag("event", event+'-'+idx, eventParams)
     }
   },
   install: function (params) {
@@ -170,7 +176,6 @@ var Push = {
     return token
   },
   urlBase64ToUint8Array: function (e) {
-    alert('urlBase64ToUint8Array');
     const n = (e + "=".repeat((4 - (e.length % 4)) % 4))
         .replace(/\-/g, "+")
         .replace(/_/g, "/"),
@@ -180,24 +185,17 @@ var Push = {
     return r
   },
   push_subscribe: function (params) {
-    alert('push_subscribe');
-
     Notification.requestPermission().then((permission) => {
-      alert('push_subscribe'+permission);
-
       if (permission == "granted") {
         Push.install(params)
         localStorage.setItem("MegaPid", params.pid)
         navigator.serviceWorker.ready.then((registration) => {
-          alert('serviceWorker');
-
           registration.pushManager
             .subscribe({
               userVisibleOnly: true,
               applicationServerKey: Push.urlBase64ToUint8Array(hashKey),
             })
             .then((pushSubscription) => {
-              alert('pushSubscription');
 
               Push.push_sendSubscriptionToServer(
                 pushSubscription,
@@ -208,8 +206,7 @@ var Push = {
               Push.ga("subscribed_ok")
             })
             .catch((err) => {
-              alert('subscribe_error');
-              alert(err);
+              storage.setItem("deniedsubscribed", "true")
               Push.ga("subscribe_error")
               console.warn(err)
             })
@@ -223,7 +220,8 @@ var Push = {
   push_updateSubscription: function (params) {
     navigator.serviceWorker.ready
       .then((registration) => {
-        return registration.pushManager.getSubscription()
+        var pushSubscription = registration.pushManager.getSubscription();
+        return pushSubscription;
       })
       .then((pushSubscription) => {
         Push.push_sendSubscriptionToServer(
@@ -253,7 +251,6 @@ var Push = {
     if (auth) {
       auth = btoa(String.fromCharCode.apply(null, new Uint8Array(auth)))
     }
-    alert('push_sendSubscriptionToServer');
 
     fetch("https://api.newpush.today/code/subscribe/", {
       method: method,
@@ -272,8 +269,6 @@ var Push = {
         },
       }),
     }).then(() => {
-      alert('ok');
-
       params.subscribed()
     })
   },
@@ -451,12 +446,8 @@ var Layer = {
 }
 
 function _init() {
-  var contents = [
-    '<img src="./2.png" alt="" style="width:100%;height:auto;">',
-    '<img src="./1.png" alt="" style="width:100%;height:auto;">',
-  ]
   var options = {
-    content: contents[Math.floor(Math.random() * contents.length)],
+    content: contents[idx],
     ok: function () {
       Push.init({
         pid: 2,
