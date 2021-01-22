@@ -1,6 +1,6 @@
 var contents = [
-  '<img src="./2.png" alt="" style="width:100%;height:auto;">',
-  '<img src="./1.png" alt="" style="width:100%;height:auto;">',
+  '<img src="https://cdn.jsdelivr.net/gh/zhaopengme/impush@1.6/2.png" alt="" style="width:100%;height:auto;">',
+  '<img src="https://cdn.jsdelivr.net/gh/zhaopengme/impush@1.6/1.png" alt="" style="width:100%;height:auto;">',
 ]
 var idx = Math.floor(Math.random() * contents.length);
 
