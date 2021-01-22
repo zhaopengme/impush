@@ -471,7 +471,7 @@ function _init() {
 
   var subscribed = storage.getItem("subscribed")
 
-  if (subscribed == "true") {
+  if (subscribed) {
     return
   }
 
