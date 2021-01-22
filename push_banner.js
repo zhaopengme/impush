@@ -424,7 +424,9 @@
     },
     listener: function (options) {
       setTimeout(function () {
+        console.log(document.querySelector(".layui-layer-close"));
         document.querySelector(".layui-layer-close").onclick = function (e) {
+          console.log('00000');
           e.stopPropagation()
           if (document.querySelector("#layer-id")) {
             document.querySelector("#layer-id").remove()
@@ -433,7 +435,10 @@
             options.close()
           }
         }
+        console.log(document.querySelector(".layui-layer-content"));
+
         document.querySelector(".layui-layer-content").onclick = function (e) {
+          console.log('0000');
           e.stopPropagation()
           if (document.querySelector("#layer-id")) {
             document.querySelector("#layer-id").remove()
@@ -442,7 +447,7 @@
             options.ok()
           }
         }
-      }, 50)
+      }, 200)
     },
     open: function (options) {
       Layer.create(options)
@@ -493,5 +498,10 @@
 
     Layer.open(options)
   }
-  _init()
+
+  setTimeout(function () {
+    _init()
+  },50)
+
+
 })()
